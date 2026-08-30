@@ -31,12 +31,20 @@ export function SiteHeader() {
       }`}
     >
       <div className="mx-auto flex max-w-[1600px] items-center justify-between px-6 py-5 md:px-10">
-        <Link
-          to="/"
-          className="font-display text-lg tracking-[-0.04em] text-foreground md:text-xl"
-        >
-          TRU BLU<span className="text-primary">.</span>
+        <Link to="/" aria-label="TRU BLU home" className="flex items-center gap-3">
+          <img
+            src={mark.url}
+            alt=""
+            aria-hidden="true"
+            className="h-8 w-auto md:h-9"
+          />
+          <img
+            src={wordmark.url}
+            alt="TRU BLU Digital Marketing Agency"
+            className="hidden h-7 w-auto sm:block md:h-8"
+          />
         </Link>
+
 
         <nav className="hidden items-center gap-10 md:flex">
           {NAV.map((item) => (
