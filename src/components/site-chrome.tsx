@@ -113,9 +113,13 @@ export function SiteFooter() {
       <div className="mx-auto max-w-[1600px] px-6 py-16 md:px-10 md:py-20">
         <div className="grid gap-12 md:grid-cols-[1.4fr_1fr_1fr]">
           <div>
-            <p className="display text-4xl md:text-5xl">
-              TRU BLU<span className="text-aegean">.</span>
-            </p>
+            <img
+              src={wordmark.url}
+              alt="TRU BLU Digital Marketing Agency"
+              loading="lazy"
+              className="h-16 w-auto md:h-20"
+            />
+
             <p className="mt-5 max-w-sm text-sm leading-relaxed text-limestone/60">
               Full-stack digital marketing and growth. Gauteng, South Africa.
             </p>
