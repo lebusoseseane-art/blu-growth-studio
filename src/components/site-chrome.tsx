@@ -1,5 +1,8 @@
 import { Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
+import wordmark from "@/assets/trublu-wordmark.png.asset.json";
+import mark from "@/assets/trublu-mark.png.asset.json";
+
 
 const NAV = [
   { label: "Work", href: "/#work" },
@@ -28,12 +31,20 @@ export function SiteHeader() {
       }`}
     >
       <div className="mx-auto flex max-w-[1600px] items-center justify-between px-6 py-5 md:px-10">
-        <Link
-          to="/"
-          className="font-display text-lg tracking-[-0.04em] text-foreground md:text-xl"
-        >
-          TRU BLU<span className="text-primary">.</span>
+        <Link to="/" aria-label="TRU BLU home" className="flex items-center">
+          <img
+            src={wordmark.url}
+            alt="TRU BLU Digital Marketing Agency"
+            className="hidden h-10 w-auto sm:block md:h-11"
+          />
+          <img
+            src={mark.url}
+            alt="TRU BLU"
+            className="h-10 w-auto sm:hidden"
+          />
         </Link>
+
+
 
         <nav className="hidden items-center gap-10 md:flex">
           {NAV.map((item) => (
@@ -102,9 +113,13 @@ export function SiteFooter() {
       <div className="mx-auto max-w-[1600px] px-6 py-16 md:px-10 md:py-20">
         <div className="grid gap-12 md:grid-cols-[1.4fr_1fr_1fr]">
           <div>
-            <p className="display text-4xl md:text-5xl">
-              TRU BLU<span className="text-aegean">.</span>
-            </p>
+            <img
+              src={wordmark.url}
+              alt="TRU BLU Digital Marketing Agency"
+              loading="lazy"
+              className="h-16 w-auto md:h-20"
+            />
+
             <p className="mt-5 max-w-sm text-sm leading-relaxed text-limestone/60">
               Full-stack digital marketing and growth. Gauteng, South Africa.
             </p>
