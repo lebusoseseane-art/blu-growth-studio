@@ -4,9 +4,9 @@ import heroImage from "@/assets/hero-santorini.jpg";
 import stillFruit from "@/assets/still-fruit.jpg";
 import deviceAds from "@/assets/device-ads.jpg";
 import poolTexture from "@/assets/texture-pool.jpg";
-import caseOne from "@/assets/case-one.jpg";
-import caseTwo from "@/assets/case-two.jpg";
-import caseThree from "@/assets/case-three.jpg";
+import caseOne from "@/assets/case-carsharenova.jpg.asset.json";
+import caseTwo from "@/assets/case-purple-blossom.png.asset.json";
+import caseThree from "@/assets/case-laith-luv.jpg.asset.json";
 import aboutTerrace from "@/assets/about-terrace.jpg";
 
 export const Route = createFileRoute("/")({
