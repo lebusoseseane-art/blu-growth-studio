@@ -147,8 +147,8 @@ function Home() {
             </div>
             <div className="relative min-h-[60vh] lg:min-h-full">
               <img
-                src={heroImage}
-                alt="Editorial portrait in linen tailoring on a sunlit Santorini terrace above the Aegean"
+                src={heroCar.url}
+                alt="Glossy blue sports car parked on white sand beside turquoise coastal water"
                 width={1600}
                 height={1920}
                 className="h-full w-full object-cover"
