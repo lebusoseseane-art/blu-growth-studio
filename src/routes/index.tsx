@@ -12,13 +12,13 @@ import aboutTerrace from "@/assets/about-terrace.jpg";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "TRU BLU — Build the Brand. Build the Business." },
+      { title: "TRU BLU — Build the Brand, Cement the Business." },
       {
         name: "description",
         content:
           "TRU BLU is a premium full-stack digital marketing and growth agency in Gauteng. Specialists in Meta ads, TikTok ads and short-form content.",
       },
-      { property: "og:title", content: "TRU BLU — Build the Brand. Build the Business." },
+      { property: "og:title", content: "TRU BLU — Build the Brand, Cement the Business." },
       {
         property: "og:description",
         content:
