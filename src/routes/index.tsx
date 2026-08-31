@@ -4,9 +4,9 @@ import heroImage from "@/assets/hero-santorini.jpg";
 import stillFruit from "@/assets/still-fruit.jpg";
 import deviceAds from "@/assets/device-ads.jpg";
 import poolTexture from "@/assets/texture-pool.jpg";
-import caseOne from "@/assets/case-one.jpg";
-import caseTwo from "@/assets/case-two.jpg";
-import caseThree from "@/assets/case-three.jpg";
+import caseOne from "@/assets/case-carsharenova.jpg.asset.json";
+import caseTwo from "@/assets/case-purple-blossom.png.asset.json";
+import caseThree from "@/assets/case-laith-luv.jpg.asset.json";
 import aboutTerrace from "@/assets/about-terrace.jpg";
 
 export const Route = createFileRoute("/")({
@@ -63,31 +63,40 @@ const CHAIN = ["Brand", "Content", "Attention", "Leads", "Customers", "Growth"];
 
 const CASES = [
   {
-    image: caseOne,
-    client: "Lumière Atelier",
-    sector: "Premium retail",
-    challenge: "A respected name with no modern presence and flat in-store traffic.",
-    strategy: "Repositioned the brand upward, then built a paid social engine beneath it.",
-    creative: "Editorial campaign photography cut into a monthly Reels calendar.",
-    result: "4.1× return on ad spend across six months.",
+    image: caseOne.url,
+    client: "CarShareNova",
+    sector: "South Africa's first luxury and exotic car sharing platform",
+    description: "Brand identity & performance marketing campaign",
+    challenge: "Strong startup idea, weak awareness and user base, low direct booking share.",
+    strategy:
+      "Consistency and professional brand identity, followed by Meta Ad and Google Ad-led discovery at scale.",
+    creative: "High-quality, vehicle-focused images to entice desire and demand.",
+    result: "Scaled audience from 1,000 to 5,000+ followers across platforms in under six months.",
   },
   {
-    image: caseTwo,
-    client: "Marchetti Interiors",
-    sector: "Design & manufacture",
-    challenge: "Beautiful product, invisible pipeline, referral-dependent growth.",
-    strategy: "Search and Meta working together — capture demand, then create it.",
-    creative: "Still-life campaign built for scroll, not for catalogue.",
-    result: "312% increase in qualified enquiries.",
+    image: caseTwo.url,
+    client: "The Purple Blossom Dental Studio",
+    sector: "Dental & aesthetics",
+    description: "Full-scale branding and content consultations",
+    challenge:
+      "High-traffic business location, low awareness and client base, low direct bookings and walk-ins.",
+    strategy:
+      "Full-scale luxury branding and exterior branding, followed by organic search engine marketing for discovery at scale.",
+    creative: "Professional and informative still graphics tailored for a mature audience.",
+    result: "Increased local search visibility and boosted direct walk-ins and consultation bookings.",
   },
   {
-    image: caseThree,
-    client: "Aegean Collective",
-    sector: "Hospitality",
-    challenge: "Strong location, weak story, low direct booking share.",
-    strategy: "Brand narrative first, then TikTok-led discovery at scale.",
-    creative: "Short-form series shot on property across one production week.",
-    result: "58% of bookings moved direct within one season.",
+    image: caseThree.url,
+    client: "Laith Luv",
+    sector: "Music & culture",
+    description:
+      "PR, music marketing and project rollout (Home EP — 2026) for musician, DJ & producer Laith Luv",
+    challenge: "An instrumental EP needs to tell a compelling story without vocals.",
+    strategy:
+      "Storytelling media and an animated DJ mix promoting the EP, leveraging fanbase UGC to maintain consistent visibility.",
+    creative:
+      "Detailed stills, a re-established artist presence in new photography, and dynamic performance footage.",
+    result: "Re-established artist presence and sustained engagement across the EP rollout cycle.",
   },
 ];
 
@@ -320,13 +329,17 @@ function Home() {
                   </figure>
                   <div className="self-center">
                     <p className="eyebrow text-primary">{study.sector}</p>
-                    <h3 className="display mt-5 text-5xl md:text-6xl">{study.client}</h3>
-                    <dl className="mt-10 space-y-6 border-t border-border pt-8">
+                    <h3 className="display mt-5 text-4xl md:text-5xl">{study.client}</h3>
+                    <p className="mt-4 max-w-md font-serif text-lg italic text-foreground/70">
+                      {study.description}
+                    </p>
+                    <dl className="mt-8 space-y-6 border-t border-border pt-8">
                       <Row term="Challenge" value={study.challenge} />
                       <Row term="Strategy" value={study.strategy} />
                       <Row term="Creative" value={study.creative} />
                     </dl>
-                    <p className="mt-10 font-serif text-3xl italic leading-tight text-primary md:text-4xl">
+                    <p className="eyebrow mt-10 text-muted-foreground">Outcome</p>
+                    <p className="mt-3 font-serif text-2xl italic leading-tight text-primary md:text-3xl">
                       {study.result}
                     </p>
                   </div>
