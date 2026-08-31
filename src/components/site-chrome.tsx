@@ -1,7 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
-import wordmark from "@/assets/trublu-wordmark-v2.png.asset.json";
-import mark from "@/assets/trublu-mark-v2.png.asset.json";
+const wordmark = "/assets/trublu-wordmark-v2.png";
+const mark = "/assets/trublu-mark-v2.png";
 
 
 const NAV = [
@@ -33,12 +33,12 @@ export function SiteHeader() {
       <div className="mx-auto flex max-w-[1600px] items-center justify-between px-6 py-5 md:px-10">
         <Link to="/" aria-label="TRU BLU home" className="flex items-center">
           <img
-            src={wordmark.url}
+            src={wordmark}
             alt="TRU BLU Digital Marketing Agency"
             className="hidden h-10 w-auto sm:block md:h-11"
           />
           <img
-            src={mark.url}
+            src={mark}
             alt="TRU BLU"
             className="h-10 w-auto sm:hidden"
           />
@@ -114,7 +114,7 @@ export function SiteFooter() {
         <div className="grid gap-12 md:grid-cols-[1.4fr_1fr_1fr]">
           <div>
             <img
-              src={wordmark.url}
+              src={wordmark}
               alt="TRU BLU Digital Marketing Agency"
               loading="lazy"
               className="h-16 w-auto md:h-20"

@@ -63,7 +63,7 @@ const CHAIN = ["Brand", "Content", "Attention", "Leads", "Customers", "Growth"];
 
 const CASES = [
   {
-    image: caseOne.url,
+    image: caseOne,
     client: "CarShareNova",
     sector: "South Africa's first luxury and exotic car sharing platform",
     description: "Brand identity & performance marketing campaign",
@@ -74,7 +74,7 @@ const CASES = [
     result: "Scaled audience from 1,000 to 5,000+ followers across platforms in under six months.",
   },
   {
-    image: caseTwo.url,
+    image: caseTwo,
     client: "The Purple Blossom Dental Studio",
     sector: "Dental & aesthetics",
     description: "Full-scale branding and content consultations",
@@ -86,7 +86,7 @@ const CASES = [
     result: "Increased local search visibility and boosted direct walk-ins and consultation bookings.",
   },
   {
-    image: caseThree.url,
+    image: caseThree,
     client: "Laith Luv",
     sector: "Music & culture",
     description:
