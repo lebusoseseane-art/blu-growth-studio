@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteHeader, SiteFooter } from "@/components/site-chrome";
-import heroImage from "@/assets/hero-santorini.jpg";
+import heroCar from "@/assets/hero-car-coast.jpg.asset.json";
 import stillFruit from "@/assets/still-fruit.jpg";
 import deviceAds from "@/assets/device-ads.jpg";
 import poolTexture from "@/assets/texture-pool.jpg";
@@ -12,13 +12,13 @@ import aboutTerrace from "@/assets/about-terrace.jpg";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "TRU BLU — Build the Brand. Build the Business." },
+      { title: "TRU BLU — Build the Brand, Cement the Business." },
       {
         name: "description",
         content:
           "TRU BLU is a premium full-stack digital marketing and growth agency in Gauteng. Specialists in Meta ads, TikTok ads and short-form content.",
       },
-      { property: "og:title", content: "TRU BLU — Build the Brand. Build the Business." },
+      { property: "og:title", content: "TRU BLU — Build the Brand, Cement the Business." },
       {
         property: "og:description",
         content:
@@ -126,9 +126,9 @@ function Home() {
               <h1 className="display reveal mt-8 text-[17vw] leading-[0.84] sm:text-[11vw] lg:text-[7.4vw]">
                 Build the
                 <br />
-                brand.
+                brand,
                 <br />
-                Build the
+                cement the
                 <br />
                 <span className="text-primary">business.</span>
               </h1>
@@ -147,8 +147,8 @@ function Home() {
             </div>
             <div className="relative min-h-[60vh] lg:min-h-full">
               <img
-                src={heroImage}
-                alt="Editorial portrait in linen tailoring on a sunlit Santorini terrace above the Aegean"
+                src={heroCar.url}
+                alt="Glossy blue sports car parked on white sand beside turquoise coastal water"
                 width={1600}
                 height={1920}
                 className="h-full w-full object-cover"

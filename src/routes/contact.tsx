@@ -66,6 +66,14 @@ function ContactPage() {
                 Tell us where the business is going. We&apos;ll tell you what it takes to
                 get there.
               </p>
+              <div className="mt-8 space-y-2 text-sm text-muted-foreground">
+                <a href="mailto:goblu@trubluagency.co.za" className="block hover:text-foreground">
+                  goblu@trubluagency.co.za
+                </a>
+                <a href="tel:+27768659792" className="block hover:text-foreground">
+                  076 865 9792
+                </a>
+              </div>
               <img
                 src={poolTexture}
                 alt="Sunlit Aegean blue pool water beside a white limestone edge"

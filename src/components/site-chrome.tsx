@@ -1,7 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
-import wordmark from "@/assets/trublu-wordmark.png.asset.json";
-import mark from "@/assets/trublu-mark.png.asset.json";
+import wordmark from "@/assets/trublu-wordmark-v2.png.asset.json";
+import mark from "@/assets/trublu-mark-v2.png.asset.json";
 
 
 const NAV = [
@@ -134,8 +134,11 @@ export function SiteFooter() {
           </div>
           <div className="space-y-3 text-sm text-limestone/70">
             <p className="eyebrow text-limestone/40">Contact</p>
-            <a href="mailto:hello@trublu.co.za" className="block hover:text-limestone">
-              hello@trublu.co.za
+            <a href="mailto:goblu@trubluagency.co.za" className="block hover:text-limestone">
+              goblu@trubluagency.co.za
+            </a>
+            <a href="tel:+27768659792" className="block hover:text-limestone">
+              076 865 9792
             </a>
             <p>Gauteng, RSA</p>
           </div>
