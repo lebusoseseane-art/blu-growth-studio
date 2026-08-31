@@ -1,7 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
-import wordmark from "@/assets/trublu-wordmark.png.asset.json";
-import mark from "@/assets/trublu-mark.png.asset.json";
+import wordmark from "@/assets/trublu-wordmark-v2.png.asset.json";
+import mark from "@/assets/trublu-mark-v2.png.asset.json";
 
 
 const NAV = [
