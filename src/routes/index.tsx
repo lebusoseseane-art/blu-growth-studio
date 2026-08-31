@@ -338,7 +338,8 @@ function Home() {
                       <Row term="Strategy" value={study.strategy} />
                       <Row term="Creative" value={study.creative} />
                     </dl>
-                    <p className="mt-10 font-serif text-3xl italic leading-tight text-primary md:text-4xl">
+                    <p className="eyebrow mt-10 text-muted-foreground">Outcome</p>
+                    <p className="mt-3 font-serif text-2xl italic leading-tight text-primary md:text-3xl">
                       {study.result}
                     </p>
                   </div>
