@@ -1,13 +1,13 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteHeader, SiteFooter } from "@/components/site-chrome";
-import heroSantorini from "@/assets/hero-santorini.jpg";
-import stillFruit from "@/assets/still-fruit.jpg";
-import deviceAds from "@/assets/device-ads.jpg";
-import poolTexture from "@/assets/texture-pool.jpg";
-import caseOne from "@/assets/case-carsharenova.jpg.asset.json";
-import caseTwo from "@/assets/case-purple-blossom.png.asset.json";
-import caseThree from "@/assets/case-laith-luv.jpg.asset.json";
-import aboutTerrace from "@/assets/about-terrace.jpg";
+const heroSantorini = "/assets/hero-santorini.jpg";
+const stillFruit = "/assets/still-fruit.jpg";
+const deviceAds = "/assets/device-ads.jpg";
+const poolTexture = "/assets/texture-pool.jpg";
+const caseOne = "/assets/case-carsharenova.jpg";
+const caseTwo = "/assets/case-purple-blossom.png";
+const caseThree = "/assets/case-laith-luv.jpg";
+const aboutTerrace = "/assets/about-terrace.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
