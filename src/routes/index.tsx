@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteHeader, SiteFooter } from "@/components/site-chrome";
-import heroCar from "@/assets/hero-car-coast.jpg.asset.json";
+import heroSantorini from "@/assets/hero-santorini.jpg";
 import stillFruit from "@/assets/still-fruit.jpg";
 import deviceAds from "@/assets/device-ads.jpg";
 import poolTexture from "@/assets/texture-pool.jpg";
@@ -147,8 +147,8 @@ function Home() {
             </div>
             <div className="relative min-h-[60vh] lg:min-h-full">
               <img
-                src={heroCar.url}
-                alt="Glossy blue sports car parked on white sand beside turquoise coastal water"
+                src={heroSantorini}
+                alt="Woman in flowing linen walking along a sunlit Mediterranean coast"
                 width={1600}
                 height={1920}
                 className="h-full w-full object-cover"
