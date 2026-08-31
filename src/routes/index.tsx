@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteHeader, SiteFooter } from "@/components/site-chrome";
-import heroImage from "@/assets/hero-santorini.jpg";
+import heroCar from "@/assets/hero-car-coast.jpg.asset.json";
 import stillFruit from "@/assets/still-fruit.jpg";
 import deviceAds from "@/assets/device-ads.jpg";
 import poolTexture from "@/assets/texture-pool.jpg";
