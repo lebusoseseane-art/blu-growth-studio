@@ -126,9 +126,9 @@ function Home() {
               <h1 className="display reveal mt-8 text-[17vw] leading-[0.84] sm:text-[11vw] lg:text-[7.4vw]">
                 Build the
                 <br />
-                brand.
+                brand,
                 <br />
-                Build the
+                cement the
                 <br />
                 <span className="text-primary">business.</span>
               </h1>
