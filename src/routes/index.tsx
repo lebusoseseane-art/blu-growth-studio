@@ -329,8 +329,11 @@ function Home() {
                   </figure>
                   <div className="self-center">
                     <p className="eyebrow text-primary">{study.sector}</p>
-                    <h3 className="display mt-5 text-5xl md:text-6xl">{study.client}</h3>
-                    <dl className="mt-10 space-y-6 border-t border-border pt-8">
+                    <h3 className="display mt-5 text-4xl md:text-5xl">{study.client}</h3>
+                    <p className="mt-4 max-w-md font-serif text-lg italic text-foreground/70">
+                      {study.description}
+                    </p>
+                    <dl className="mt-8 space-y-6 border-t border-border pt-8">
                       <Row term="Challenge" value={study.challenge} />
                       <Row term="Strategy" value={study.strategy} />
                       <Row term="Creative" value={study.creative} />
