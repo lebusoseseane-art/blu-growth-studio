@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { SiteHeader, SiteFooter } from "@/components/site-chrome";
-import poolTexture from "@/assets/texture-pool.jpg";
+const poolTexture = "/assets/texture-pool.jpg";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
