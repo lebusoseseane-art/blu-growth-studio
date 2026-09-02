@@ -12,20 +12,47 @@ const aboutTerrace = "/assets/about-terrace.jpg";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "TRU BLU — Build the Brand, Cement the Business." },
+      { title: "Digital Marketing Johannesburg | TRU BLU Digital Marketing Agency" },
       {
         name: "description",
         content:
-          "TRU BLU is a premium full-stack digital marketing and growth agency in Gauteng. Specialists in Meta ads, TikTok ads and short-form content.",
+          "TRU BLU is a digital marketing agency in Johannesburg, Gauteng — social media management, Meta and TikTok advertising, content creation, local SEO, brand strategy and music PR.",
       },
-      { property: "og:title", content: "TRU BLU — Build the Brand, Cement the Business." },
+      {
+        property: "og:title",
+        content: "Digital Marketing Johannesburg | TRU BLU Digital Marketing Agency",
+      },
       {
         property: "og:description",
         content:
-          "Full-stack digital marketing for businesses ready to look better, communicate better and grow faster.",
+          "Strategic social media management and creative growth agency in Gauteng. Brand strategy, paid social, local SEO and music marketing.",
       },
       { property: "og:type", content: "website" },
+      { property: "og:url", content: "https://blu-growth-studio.lovable.app/" },
       { name: "twitter:card", content: "summary_large_image" },
+    ],
+    links: [{ rel: "canonical", href: "https://blu-growth-studio.lovable.app/" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "LocalBusiness",
+          name: "TRU BLU Digital Marketing",
+          description:
+            "Digital marketing agency in Johannesburg offering social media management, digital advertising, brand strategy, content creation, local SEO and music marketing.",
+          email: "goblu@trubluagency.co.za",
+          telephone: "+27768659792",
+          url: "https://blu-growth-studio.lovable.app/",
+          address: {
+            "@type": "PostalAddress",
+            addressRegion: "Gauteng",
+            addressLocality: "Johannesburg",
+            addressCountry: "ZA",
+          },
+          areaServed: ["Johannesburg", "Sandton", "Gauteng", "South Africa"],
+        }),
+      },
     ],
   }),
   component: Home,
@@ -33,29 +60,48 @@ export const Route = createFileRoute("/")({
 
 const SERVICES = [
   {
+    name: "Social",
+    line: "Social media management run like a publication, not a posting schedule.",
+    items: ["Social media manager", "Community", "Channel strategy"],
+  },
+  {
+    name: "Advertising",
+    line: "Digital advertising built to sell, not to decorate a feed.",
+    items: ["Meta advertising", "TikTok advertising", "Google Ads"],
+  },
+  {
     name: "Brand",
-    line: "Identity, positioning and the language a business is remembered by.",
+    line: "Brand strategy South Africa businesses are remembered by.",
     items: ["Branding solutions", "Identity systems", "Messaging & tone"],
   },
   {
-    name: "Social",
-    line: "Channels run like publications, not posting schedules.",
-    items: ["Social management", "Content strategy", "Community"],
+    name: "Content",
+    line: "Content creation Gauteng brands can actually publish every week.",
+    items: ["Reels & short-form", "Photography direction", "Content strategy"],
   },
   {
-    name: "Performance",
-    line: "Paid social built to sell, not to decorate a feed.",
-    items: ["Meta advertising", "TikTok advertising", "Reels & short-form"],
+    name: "Local SEO",
+    line: "Local SEO optimisation that captures Johannesburg and Sandton search intent.",
+    items: ["Local SEO", "Google Business Profile", "Search marketing"],
+  },
+];
+
+const MUSIC = [
+  {
+    name: "Music video production & visual concepts",
+    line: "Concept, direction and delivery for artists building a visual world.",
   },
   {
-    name: "Search",
-    line: "Intent captured the moment it appears.",
-    items: ["SEO", "Google Ads", "Search marketing"],
+    name: "4K DJ mixes produced for TV & streaming",
+    line: "Broadcast-grade mix films finished for television and streaming platforms.",
   },
   {
-    name: "PR + Growth",
-    line: "Presence in the world, and a plan behind it.",
-    items: ["PR campaigns", "Events & activations", "Growth consulting"],
+    name: "Music advertising & paid media",
+    line: "Paid campaigns that put releases in front of the right listeners.",
+  },
+  {
+    name: "Album rollout & single launch strategy",
+    line: "Sequenced rollouts, press moments and music PR Johannesburg artists can sustain.",
   },
 ];
 
@@ -120,10 +166,16 @@ function Home() {
         <section className="relative">
           <div className="grid min-h-[92vh] lg:grid-cols-[1.05fr_0.95fr]">
             <div className="flex flex-col justify-end px-6 pb-16 pt-36 md:px-10 lg:pb-24 lg:pt-40">
+              <h1 className="sr-only">
+                Premier Digital Marketing in Johannesburg | Tru Blu Digital Marketing
+              </h1>
               <p className="eyebrow reveal text-primary">
-                Digital marketing &amp; growth — Gauteng, RSA
+                Digital marketing Johannesburg — Gauteng, RSA
               </p>
-              <h1 className="display reveal mt-8 text-[17vw] leading-[0.84] sm:text-[11vw] lg:text-[7.4vw]">
+              <p
+                aria-hidden="true"
+                className="display reveal mt-8 text-[17vw] leading-[0.84] sm:text-[11vw] lg:text-[7.4vw]"
+              >
                 Build the
                 <br />
                 brand,
@@ -131,11 +183,14 @@ function Home() {
                 cement the
                 <br />
                 <span className="text-primary">business.</span>
-              </h1>
-              <div className="mt-12 flex flex-col gap-8 sm:flex-row sm:items-end sm:justify-between">
+              </p>
+              <h2 className="mt-10 max-w-xl font-serif text-xl italic leading-snug text-foreground/80 md:text-2xl">
+                Strategic Social Media Management &amp; Creative Growth Agency in Gauteng
+              </h2>
+              <div className="mt-10 flex flex-col gap-8 sm:flex-row sm:items-end sm:justify-between">
                 <p className="max-w-md text-base leading-relaxed text-muted-foreground md:text-lg">
-                  Full-stack digital marketing for businesses ready to look better,
-                  communicate better and grow faster.
+                  Full-stack digital marketing for Johannesburg and Sandton businesses
+                  ready to look better, communicate better and grow faster.
                 </p>
                 <Link
                   to="/contact"
@@ -148,12 +203,13 @@ function Home() {
             <div className="relative min-h-[60vh] lg:min-h-full">
               <img
                 src={heroSantorini}
-                alt="Woman in flowing linen walking along a sunlit Mediterranean coast"
-                width={1600}
-                height={1920}
+                alt="Digital marketing team in Johannesburg - Tru Blu, a diverse group in white linen on a sunlit Mediterranean coastline"
+                width={1024}
+                height={1408}
                 className="h-full w-full object-cover"
               />
             </div>
+
           </div>
           <div className="rule-line mx-6 md:mx-10" />
           <p className="mx-6 py-5 font-serif text-sm italic text-muted-foreground md:mx-10 md:text-base">
@@ -191,7 +247,7 @@ function Home() {
             </div>
             <img
               src={stillFruit}
-              alt="Blue grapes, blueberries and a halved fig on travertine and marble in hard sunlight"
+              alt="Brand strategy South Africa still life — blue grapes, blueberries and a halved fig on travertine in hard Mediterranean sunlight"
               loading="lazy"
               width={1408}
               height={1008}
@@ -208,7 +264,7 @@ function Home() {
                 Services
               </h2>
               <p className="max-w-xs text-sm leading-relaxed text-muted-foreground">
-                Five disciplines, one commercial objective.
+                Core digital marketing disciplines, one commercial objective.
               </p>
             </div>
 
@@ -230,6 +286,33 @@ function Home() {
                       {service.items.join(" · ")}
                     </p>
                   </div>
+                </div>
+              ))}
+            </div>
+
+            <div className="mt-24 flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
+              <h2 className="display text-[11vw] leading-[0.86] sm:text-5xl lg:text-6xl">
+                Music marketing
+                <br />
+                &amp; artist PR
+              </h2>
+              <p className="max-w-xs text-sm leading-relaxed text-muted-foreground">
+                Music PR Johannesburg artists use to release properly.
+              </p>
+            </div>
+
+            <div className="mt-12 grid gap-px bg-border sm:grid-cols-2">
+              {MUSIC.map((item) => (
+                <div
+                  key={item.name}
+                  className="group bg-background p-8 transition-colors duration-500 hover:bg-secondary/50 md:p-10"
+                >
+                  <h3 className="display text-2xl leading-tight transition-colors duration-500 group-hover:text-primary md:text-3xl">
+                    {item.name}
+                  </h3>
+                  <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
+                    {item.line}
+                  </p>
                 </div>
               ))}
             </div>
@@ -263,7 +346,7 @@ function Home() {
             <div className="order-1 min-h-[50vh] lg:order-2 lg:min-h-full">
               <img
                 src={deviceAds}
-                alt="A smartphone showing a cobalt social advertising feed on travertine beside a pool"
+                alt="Social media manager strategies for Gauteng businesses shown on a smartphone advertising feed beside a pool"
                 loading="lazy"
                 width={1408}
                 height={1008}
@@ -320,7 +403,7 @@ function Home() {
                   <figure className="overflow-hidden">
                     <img
                       src={study.image}
-                      alt={`${study.client} campaign photography`}
+                      alt={`${study.client} — digital marketing Johannesburg campaign by Tru Blu`}
                       loading="lazy"
                       width={1200}
                       height={1500}
@@ -353,7 +436,7 @@ function Home() {
         <section id="insights" className="relative scroll-mt-24 overflow-hidden">
           <img
             src={poolTexture}
-            alt="Sunlit Aegean pool water"
+            alt="Sunlit Aegean pool water backdrop for the Tru Blu growth audit for Gauteng businesses"
             loading="lazy"
             width={1600}
             height={912}
@@ -397,7 +480,7 @@ function Home() {
             <div className="grid gap-14 lg:grid-cols-[1fr_1.1fr] lg:gap-24">
               <img
                 src={aboutTerrace}
-                alt="Laptop with a marketing dashboard on a linen table overlooking the Aegean"
+                alt="Digital marketing agency Sandton dashboard on a laptop on a linen table overlooking the Aegean"
                 loading="lazy"
                 width={1408}
                 height={1104}
