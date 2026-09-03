@@ -329,7 +329,7 @@ function Home() {
                 really move.
               </h2>
               <div className="mt-14 space-y-1">
-                {["Meta ads", "TikTok ads", "Reels"].map((item) => (
+                {["Advertising", "Music marketing", "Social"].map((item) => (
                   <p
                     key={item}
                     className="display border-b border-primary-foreground/20 py-5 text-4xl md:text-6xl"
