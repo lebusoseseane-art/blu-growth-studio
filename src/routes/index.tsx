@@ -82,8 +82,7 @@ const SERVICES = [
   {
     name: "SEARCH ENGINE OPTIMISATION",
     line: "SEO and website improvements that ensure you find the exact people looking for your kind of business, every time. Our niche search engine ranking improvement skills will drastically increase your potential for lead generation.&nbsp;",
-    items: ["&nbsp;Local SEO", "Website Improvements", "Search Engine Marketing", "Location Tagging &nbsp;
-"],
+    items: ["Local SEO", "Website Improvements", "Search Engine Marketing", "Location Tagging"],
   },
 ];
 
