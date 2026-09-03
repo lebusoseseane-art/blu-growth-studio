@@ -1,7 +1,9 @@
 import { Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
+import truBluMarkIcon from "@/assets/trublu-mark-icon.png.asset.json";
 const wordmark = "/assets/trublu-wordmark-v2.png";
-const mark = "/assets/trublu-mark-v2.png";
+const mark = truBluMarkIcon.url;
+
 
 
 const NAV = [
