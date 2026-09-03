@@ -169,9 +169,9 @@ function Home() {
               <h1 className="sr-only">
                 Premier Digital Marketing in Johannesburg | Tru Blu Digital Marketing
               </h1>
-              <p className="eyebrow reveal text-primary">
-                Digital marketing Johannesburg — Gauteng, RSA
-              </p>
+                <p className="eyebrow reveal text-primary">
+                  TRU BLU DIGITAL MARKETING AGENCY - SANDTON, JOHANNESBURG&nbsp;
+                </p>
               <p
                 aria-hidden="true"
                 className="display reveal mt-8 text-[17vw] leading-[0.84] sm:text-[11vw] lg:text-[7.4vw]"
@@ -185,12 +185,12 @@ function Home() {
                 <span className="text-primary">business.</span>
               </p>
               <h2 className="mt-10 max-w-xl font-serif text-xl italic leading-snug text-foreground/80 md:text-2xl">
-                Strategic Social Media Management &amp; Creative Growth Agency in Gauteng
+                Strategic Digital Marketing &amp; Creative Growth Agency&nbsp;
               </h2>
               <div className="mt-10 flex flex-col gap-8 sm:flex-row sm:items-end sm:justify-between">
                 <p className="max-w-md text-base leading-relaxed text-muted-foreground md:text-lg">
-                  Full-stack digital marketing for Johannesburg and Sandton businesses
-                  ready to look better, communicate better and grow faster.
+                  Full-stack digital marketing for South African businesses ready to look
+                  better, communicate better and grow faster.
                 </p>
                 <Link
                   to="/contact"
