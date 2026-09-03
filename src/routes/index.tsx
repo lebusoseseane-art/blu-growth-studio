@@ -203,7 +203,7 @@ function Home() {
             <div className="relative min-h-[60vh] lg:min-h-full">
               <img
                 src={heroSantorini}
-                alt="Digital marketing team in Johannesburg - Tru Blu, a diverse group in white linen on a sunlit Mediterranean coastline"
+                alt="A stylish woman on a sunlit Mediterranean coastline representing the editorial luxury brand vision of TRU BLU Digital Marketing"
                 width={1024}
                 height={1408}
                 className="h-full w-full object-cover"
@@ -329,7 +329,7 @@ function Home() {
                 really move.
               </h2>
               <div className="mt-14 space-y-1">
-                {["Meta ads", "TikTok ads", "Reels"].map((item) => (
+                {["Advertising", "Music marketing", "Social"].map((item) => (
                   <p
                     key={item}
                     className="display border-b border-primary-foreground/20 py-5 text-4xl md:text-6xl"
