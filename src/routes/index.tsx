@@ -61,7 +61,7 @@ export const Route = createFileRoute("/")({
 const SERVICES = [
   {
     name: "Social",
-    line: "Social media management run like a publication beyond just a posting schedule.",
+    line: "Social media channels run like a publication, beyond just a posting schedule.",
     items: ["Social Media Management", "Community Building", "Social Strategy Consultations"],
   },
   {
@@ -71,7 +71,7 @@ const SERVICES = [
   },
   {
     name: "Brand",
-    line: "The kind of strategic brand solutions that South Africa businesses are remembered by for decades.&nbsp;",
+    line: "The kind of strategic brand solutions that South African businesses are remembered by for decades.",
     items: ["Branding Solutions", "Identity Systems", "Messaging & Tone", "Logos and Brand Kits"],
   },
   {
@@ -81,7 +81,7 @@ const SERVICES = [
   },
   {
     name: "SEARCH ENGINE OPTIMISATION",
-    line: "SEO and website improvements that ensure you find the exact people looking for your kind of business, every time. Our niche search engine ranking improvement skills will drastically increase your potential for lead generation.&nbsp;",
+    line: "SEO and website improvements that ensure you find the exact people looking for your kind of business, every time. Our niche search engine ranking improvement skills will drastically increase your potential for lead generation.",
     items: ["Local SEO", "Website Improvements", "Search Engine Marketing", "Location Tagging"],
   },
 ];
@@ -89,7 +89,7 @@ const SERVICES = [
 const MUSIC = [
   {
     name: "Music video production & visual concepts",
-    line: "Concept, direction and delivery for artists building a visual world for an immersive fan experience.&nbsp;",
+    line: "Concept, direction and delivery for artists building a visual world for an immersive fan experience.",
   },
   {
     name: "4K DJ MIXES PRODUCED FOR SOCIALS, TV & STREAMING",
@@ -101,7 +101,7 @@ const MUSIC = [
   },
   {
     name: "Album rollout & single launch strategy",
-    line: "Sequenced rollouts, press moments and music PR to harness and grow artist value with every new release.&nbsp;",
+    line: "Sequenced rollouts, press moments and music PR to harness and grow artist value with every new release.",
   },
 ];
 
