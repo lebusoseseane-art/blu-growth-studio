@@ -203,7 +203,7 @@ function Home() {
             <div className="relative min-h-[60vh] lg:min-h-full">
               <img
                 src={heroSantorini}
-                alt="Digital marketing team in Johannesburg - Tru Blu, a diverse group in white linen on a sunlit Mediterranean coastline"
+                alt="A stylish woman on a sunlit Mediterranean coastline representing the editorial luxury brand vision of TRU BLU Digital Marketing"
                 width={1024}
                 height={1408}
                 className="h-full w-full object-cover"
