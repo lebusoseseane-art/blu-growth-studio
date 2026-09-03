@@ -61,47 +61,48 @@ export const Route = createFileRoute("/")({
 const SERVICES = [
   {
     name: "Social",
-    line: "Social media management run like a publication, not a posting schedule.",
-    items: ["Social media manager", "Community", "Channel strategy"],
+    line: "Social media management run like a publication beyond just a posting schedule.",
+    items: ["Social Media Management", "Community Building", "Social Strategy Consultations"],
   },
   {
     name: "Advertising",
-    line: "Digital advertising built to sell, not to decorate a feed.",
-    items: ["Meta advertising", "TikTok advertising", "Google Ads"],
+    line: "Digital advertising solutions built to sell and create direct awareness, not just adverts published to decorate.",
+    items: ["Meta Advertising", "TikTok Advertising", "Google Ads", "Digital outdoor billboards", "Vehicle adverts", "Radio"],
   },
   {
     name: "Brand",
-    line: "Brand strategy South Africa businesses are remembered by.",
-    items: ["Branding solutions", "Identity systems", "Messaging & tone"],
+    line: "The kind of strategic brand solutions that South Africa businesses are remembered by for decades.&nbsp;",
+    items: ["Branding Solutions", "Identity Systems", "Messaging & Tone", "Logos and Brand Kits"],
   },
   {
     name: "Content",
-    line: "Content creation Gauteng brands can actually publish every week.",
-    items: ["Reels & short-form", "Photography direction", "Content strategy"],
+    line: "Professional and effective content solutions that brands can publish on a consistent basis.",
+    items: ["Reels & short-form", "Photography & Videography Solutions", "Content Strategy", "Digital Assets"],
   },
   {
-    name: "Local SEO",
-    line: "Local SEO optimisation that captures Johannesburg and Sandton search intent.",
-    items: ["Local SEO", "Google Business Profile", "Search marketing"],
+    name: "SEARCH ENGINE OPTIMISATION",
+    line: "SEO and website improvements that ensure you find the exact people looking for your kind of business, every time. Our niche search engine ranking improvement skills will drastically increase your potential for lead generation.&nbsp;",
+    items: ["&nbsp;Local SEO", "Website Improvements", "Search Engine Marketing", "Location Tagging &nbsp;
+"],
   },
 ];
 
 const MUSIC = [
   {
     name: "Music video production & visual concepts",
-    line: "Concept, direction and delivery for artists building a visual world.",
+    line: "Concept, direction and delivery for artists building a visual world for an immersive fan experience.&nbsp;",
   },
   {
-    name: "4K DJ mixes produced for TV & streaming",
-    line: "Broadcast-grade mix films finished for television and streaming platforms.",
+    name: "4K DJ MIXES PRODUCED FOR SOCIALS, TV & STREAMING",
+    line: "Broadcast-grade professional mixes with a cinematic finish for television and streaming platforms.",
   },
   {
     name: "Music advertising & paid media",
-    line: "Paid campaigns that put releases in front of the right listeners.",
+    line: "Global and local campaigns that put releases and artists in front of the right listeners. Global campaigns are designed to grow global fanbase, Shazams, and listeners.",
   },
   {
     name: "Album rollout & single launch strategy",
-    line: "Sequenced rollouts, press moments and music PR Johannesburg artists can sustain.",
+    line: "Sequenced rollouts, press moments and music PR to harness and grow artist value with every new release.&nbsp;",
   },
 ];
 
@@ -170,7 +171,7 @@ function Home() {
                 Premier Digital Marketing in Johannesburg | Tru Blu Digital Marketing
               </h1>
                 <p className="eyebrow reveal text-primary">
-                  TRU BLU DIGITAL MARKETING AGENCY - SANDTON, JOHANNESBURG&nbsp;
+                  TRU BLU DIGITAL MARKETING AGENCY - JOHANNESBURG&nbsp;
                 </p>
               <p
                 aria-hidden="true"
@@ -213,7 +214,7 @@ function Home() {
           </div>
           <div className="rule-line mx-6 md:mx-10" />
           <p className="mx-6 py-5 font-serif text-sm italic text-muted-foreground md:mx-10 md:text-base">
-            We don&apos;t just build the brand. We cement the business.
+            &nbsp;Turning businesses into brands with a lasting legacy, the legacy of being a household name.&nbsp;
           </p>
         </section>
 
@@ -232,8 +233,7 @@ function Home() {
               </h2>
               <div className="space-y-8 self-end">
                 <p className="text-lg leading-relaxed text-limestone/70">
-                  Branding without business strategy is decoration. Marketing without a
-                  strong brand is noise.
+                  Branding a business without strong business operations doesn&apos;t allow the glue to stick. We track customer journey, user experiences and operational efficiencies to identify bottlenecks in&nbsp;major businesses. By consulting towards giving your customers the best experience, your brand recognition becomes cemented as a great business to interact with and/or purchase from, allowing your market share to grow and stand the test of time.
                 </p>
                 <p className="text-lg leading-relaxed text-limestone/70">
                   We work on both at once — the way a business is seen, and the way it
@@ -340,7 +340,7 @@ function Home() {
                 ))}
               </div>
               <p className="mt-12 max-w-md font-serif text-xl italic md:text-2xl">
-                Our speciality is social. Our capability is everything around it.
+                Our speciality is advertising. Our strengths just happen to encompass everything around it too.
               </p>
             </div>
             <div className="order-1 min-h-[50vh] lg:order-2 lg:min-h-full">
