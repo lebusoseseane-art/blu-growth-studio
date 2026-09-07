@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteHeader, SiteFooter } from "@/components/site-chrome";
-const heroSantorini = "/assets/hero-santorini.jpg";
+const heroSantorini = "/assets/hero-santorini.jpg?v=mediterranean-woman";
 const stillFruit = "/assets/still-fruit.jpg";
 const deviceAds = "/assets/device-ads.jpg";
 const poolTexture = "/assets/texture-pool.jpg";
