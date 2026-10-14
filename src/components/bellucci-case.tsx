@@ -162,10 +162,10 @@ export function BellucciCase() {
           {lightbox !== null ? (
             <div className="fixed inset-0 z-20 flex items-center justify-center bg-navy-deep/95 p-6" onClick={() => setLightbox(null)}>
               <figure className="max-h-full max-w-5xl" onClick={(e) => e.stopPropagation()}>
-                <img src={GALLERY[lightbox].src} alt={GALLERY[lightbox].caption} className="max-h-[80vh] w-auto object-contain" />
+                <img src={GALLERY[lightbox]!.src} alt={GALLERY[lightbox]!.caption} className="max-h-[80vh] w-auto object-contain" />
                 <figcaption className="mt-4 flex items-center justify-between gap-6 text-sm">
                   <button type="button" className="eyebrow hover:text-aegean" onClick={() => setLightbox((lightbox + GALLERY.length - 1) % GALLERY.length)}>← Prev</button>
-                  <span>{GALLERY[lightbox].caption}</span>
+                  <span>{GALLERY[lightbox]!.caption}</span>
                   <button type="button" className="eyebrow hover:text-aegean" onClick={() => setLightbox((lightbox + 1) % GALLERY.length)}>Next →</button>
                 </figcaption>
               </figure>
