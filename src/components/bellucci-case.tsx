@@ -1,19 +1,18 @@
 import { useEffect, useState } from "react";
 import { Link } from "@tanstack/react-router";
 
-const COVER = "/assets/bellucci-bottle.jpg";
+const COVER = "/assets/bellucci-bottle.jpg?v=2";
 
 const GALLERY = [
-  { src: "/assets/bellucci-stage.jpg", caption: "Main Stage & VIP Area Branding Integration", span: "md:col-span-2" },
-  { src: "/assets/bellucci-bottle.jpg", caption: "Exclusive Bottle Service & Table Experience", span: "md:row-span-2" },
-  { src: "/assets/bellucci-guests.jpg", caption: "High-Fashion Guest Immersion & Tastemaker Engagement", span: "" },
-  { src: "/assets/bellucci-bar.jpg", caption: "Signature Cocktails & Premium Bar Placement", span: "" },
+  { src: "/assets/bellucci-stage.jpg?v=2", caption: "Venue Branding & Banner Integration at Maracanà Sandton", span: "md:col-span-2" },
+  { src: "/assets/bellucci-bottle.jpg?v=2", caption: "Exclusive Bottle Service & Table Experience", span: "md:row-span-2" },
+  { src: "/assets/bellucci-bar.jpg?v=2", caption: "Premium Bar Presentation & Ice Service", span: "md:col-span-2" },
 ];
 
 const IMPACT = [
   {
     title: "Prime Venue Real Estate",
-    body: "Bespoke VIP table setups, high-visibility bar positioning, and custom branded bottle presentation service.",
+    body: "Strategically placed at the Banquet Luxury Sunset Event Experience — bespoke VIP table setups, high-visibility bar positioning, and custom branded bottle presentation service.",
   },
   {
     title: "Targeted HNW Immersion",
@@ -27,6 +26,7 @@ const IMPACT = [
 
 const META = [
   ["Client", "Bellucci Luxury Vodka"],
+  ["Event", "Banquet Luxury Sunset Event Experience"],
   ["Venue Partner", "Maracanà Sandton"],
   ["Scope", "Experiential Marketing, PR & Venue Activation, High-Res Content Creation"],
 ];
@@ -65,7 +65,7 @@ export function BellucciCase() {
             />
             <div className="absolute inset-0 bg-gradient-to-t from-navy-deep/90 via-navy-deep/20 to-transparent" />
             <span className="eyebrow absolute left-6 top-6 border border-limestone/40 px-3 py-2 text-limestone backdrop-blur-sm">
-              Sandton, Johannesburg
+              Maracana, Sandton
             </span>
             <div className="absolute inset-x-6 bottom-6 grid grid-cols-2 gap-4 border-t border-limestone/25 pt-4">
               <div>
@@ -74,7 +74,7 @@ export function BellucciCase() {
               </div>
               <div>
                 <p className="eyebrow text-limestone/60">Placement</p>
-                <p className="mt-1 text-sm">Primary Lounge Real Estate</p>
+                <p className="mt-1 text-sm">Maracana, Sandton</p>
               </div>
             </div>
           </figure>
@@ -82,7 +82,7 @@ export function BellucciCase() {
             <p className="eyebrow text-aegean">PR Activation // Experiential &amp; Brand Placement</p>
             <h3 className="display mt-5 text-4xl md:text-5xl">Bellucci Luxury Vodka</h3>
             <p className="mt-6 max-w-md font-serif text-lg italic text-limestone/75">
-              Strategic product placement, experiential venue branding, and luxury market positioning at Sandton&apos;s premier lounge and event venue.
+              Strategically placed at the Banquet Luxury Sunset Event Experience — experiential venue branding, product placement, and luxury market positioning at Maracanà Sandton, Johannesburg.
             </p>
             <button
               type="button"
@@ -109,7 +109,7 @@ export function BellucciCase() {
               Elevating Bellucci Luxury Vodka in Sandton’s Premier Nightlife Scene
             </h2>
             <p className="mt-8 max-w-3xl font-serif text-xl italic text-limestone/75">
-              How Tru Blu executed high-impact venue branding, product placement, and experiential activation to position Bellucci directly in front of South Africa&apos;s high-net-worth clientele.
+              How Tru Blu strategically placed Bellucci at the Banquet Luxury Sunset Event Experience at Maracanà Sandton — executing high-impact venue branding, product placement, and experiential activation to position the brand directly in front of South Africa's high-net-worth clientele.
             </p>
             <div className="mt-10 flex flex-wrap gap-3">
               {META.map(([k, v]) => (
