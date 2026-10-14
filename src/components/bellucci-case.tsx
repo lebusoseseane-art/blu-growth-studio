@@ -26,6 +26,7 @@ const IMPACT = [
 
 const META = [
   ["Client", "Bellucci Luxury Vodka"],
+  ["Event", "Banquet Luxury Sunset Event Experience"],
   ["Venue Partner", "Maracanà Sandton"],
   ["Scope", "Experiential Marketing, PR & Venue Activation, High-Res Content Creation"],
 ];
