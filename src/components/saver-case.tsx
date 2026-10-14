@@ -24,7 +24,7 @@ const SCOPE = [
 
 const VAULT = [
   { src: "/assets/saver-p2.jpg", title: "Brand & Logo System", body: "Primary logomark, full-colour app icons on deep navy, and responsive icon variations." },
-  { src: "/assets/saver-p9.jpg", title: "Mobile App UI & Dashboard", body: "Dark-mode UI with live Rand balances (R 12,450.00), Save / Send / Top Up actions and active goals like the Emergency Fund." },
+  { src: "/assets/saver-dashboard.jpg", title: "Mobile App UI & Dashboard", body: "Home-screen app icon and dark-mode dashboard with live Rand balances (R 12,450.00), Save / Send / Top Up actions and active goals like the Emergency Fund." },
   { src: "/assets/saver-p8.jpg", title: "App Store & Campaign Creatives", body: "Store-ready promotional banners and campaign messaging: “Smarter Saving. Bigger Goals. A Brighter Future.”" },
 ];
 
