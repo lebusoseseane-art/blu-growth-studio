@@ -12,7 +12,7 @@ const GALLERY = [
 const IMPACT = [
   {
     title: "Prime Venue Real Estate",
-    body: "Bespoke VIP table setups, high-visibility bar positioning, and custom branded bottle presentation service.",
+    body: "Strategically placed at the Banquet Luxury Sunset Event Experience — bespoke VIP table setups, high-visibility bar positioning, and custom branded bottle presentation service.",
   },
   {
     title: "Targeted HNW Immersion",
@@ -64,7 +64,7 @@ export function BellucciCase() {
             />
             <div className="absolute inset-0 bg-gradient-to-t from-navy-deep/90 via-navy-deep/20 to-transparent" />
             <span className="eyebrow absolute left-6 top-6 border border-limestone/40 px-3 py-2 text-limestone backdrop-blur-sm">
-              Sandton, Johannesburg
+              Maracana, Sandton
             </span>
             <div className="absolute inset-x-6 bottom-6 grid grid-cols-2 gap-4 border-t border-limestone/25 pt-4">
               <div>
