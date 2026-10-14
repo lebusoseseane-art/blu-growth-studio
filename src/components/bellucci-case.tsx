@@ -1,13 +1,12 @@
 import { useEffect, useState } from "react";
 import { Link } from "@tanstack/react-router";
 
-const COVER = "/assets/bellucci-bottle.jpg";
+const COVER = "/assets/bellucci-bottle.jpg?v=2";
 
 const GALLERY = [
-  { src: "/assets/bellucci-stage.jpg", caption: "Main Stage & VIP Area Branding Integration", span: "md:col-span-2" },
-  { src: "/assets/bellucci-bottle.jpg", caption: "Exclusive Bottle Service & Table Experience", span: "md:row-span-2" },
-  { src: "/assets/bellucci-guests.jpg", caption: "High-Fashion Guest Immersion & Tastemaker Engagement", span: "" },
-  { src: "/assets/bellucci-bar.jpg", caption: "Signature Cocktails & Premium Bar Placement", span: "" },
+  { src: "/assets/bellucci-stage.jpg?v=2", caption: "Venue Branding & Banner Integration at Maracanà Sandton", span: "md:col-span-2" },
+  { src: "/assets/bellucci-bottle.jpg?v=2", caption: "Exclusive Bottle Service & Table Experience", span: "md:row-span-2" },
+  { src: "/assets/bellucci-bar.jpg?v=2", caption: "Premium Bar Presentation & Ice Service", span: "md:col-span-2" },
 ];
 
 const IMPACT = [
@@ -74,7 +73,7 @@ export function BellucciCase() {
               </div>
               <div>
                 <p className="eyebrow text-limestone/60">Placement</p>
-                <p className="mt-1 text-sm">Primary Lounge Real Estate</p>
+                <p className="mt-1 text-sm">Maracana, Sandton</p>
               </div>
             </div>
           </figure>
