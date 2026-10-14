@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteHeader, SiteFooter } from "@/components/site-chrome";
 import { BellucciCase } from "@/components/bellucci-case";
+import { SaverCase } from "@/components/saver-case";
 const heroSantorini = "/assets/hero-santorini.jpg?v=mediterranean-woman";
 const stillFruit = "/assets/still-fruit.jpg";
 const deviceAds = "/assets/device-ads.jpg";
@@ -393,6 +394,7 @@ function Home() {
             </div>
 
             <div className="mt-20 space-y-24 md:space-y-32">
+              <SaverCase />
               <BellucciCase />
               {CASES.map((study, i) => (
                 <article
