@@ -52,6 +52,13 @@
   --font-display: "Archivo", "Helvetica Neue", sans-serif;
   --font-serif: "Instrument Serif", Georgia, serif;
   --font-sans: "DM Sans", system-ui, sans-serif;
+  --font-jakarta: "Plus Jakarta Sans", system-ui, sans-serif;
+  --font-inter: "Inter", system-ui, sans-serif;
+  --color-saver-navy: #0B1F3B;
+  --color-saver-blue: #0E4A6B;
+  --color-saver-green: #4EE38A;
+  --color-saver-mint: #DFFFE4;
+  --color-saver-gray: #F5F7FA;
 }
 
 :root {
