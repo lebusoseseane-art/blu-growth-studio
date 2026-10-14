@@ -82,7 +82,7 @@ export function BellucciCase() {
             <p className="eyebrow text-aegean">PR Activation // Experiential &amp; Brand Placement</p>
             <h3 className="display mt-5 text-4xl md:text-5xl">Bellucci Luxury Vodka</h3>
             <p className="mt-6 max-w-md font-serif text-lg italic text-limestone/75">
-              Strategic product placement, experiential venue branding, and luxury market positioning at Sandton&apos;s premier lounge and event venue.
+              Strategically placed at the Banquet Luxury Sunset Event Experience — experiential venue branding, product placement, and luxury market positioning at Maracanà Sandton, Johannesburg.
             </p>
             <button
               type="button"
@@ -109,7 +109,7 @@ export function BellucciCase() {
               Elevating Bellucci Luxury Vodka in Sandton’s Premier Nightlife Scene
             </h2>
             <p className="mt-8 max-w-3xl font-serif text-xl italic text-limestone/75">
-              How Tru Blu executed high-impact venue branding, product placement, and experiential activation to position Bellucci directly in front of South Africa&apos;s high-net-worth clientele.
+              How Tru Blu strategically placed Bellucci at the Banquet Luxury Sunset Event Experience at Maracanà Sandton — executing high-impact venue branding, product placement, and experiential activation to position the brand directly in front of South Africa's high-net-worth clientele.
             </p>
             <div className="mt-10 flex flex-wrap gap-3">
               {META.map(([k, v]) => (
