@@ -178,13 +178,13 @@ function Home() {
                 aria-hidden="true"
                 className="display reveal mt-8 text-[17vw] leading-[0.84] sm:text-[11vw] lg:text-[7.4vw]"
               >
-                Build the
+                Building
                 <br />
-                brand,
+                brands,
                 <br />
-                cement the
+                cementing
                 <br />
-                <span className="text-primary">business.</span>
+                <span className="text-primary">businesses.</span>
               </p>
               <h2 className="mt-10 max-w-xl font-serif text-xl italic leading-snug text-foreground/80 md:text-2xl">
                 Strategic Digital Marketing &amp; Creative Growth Agency&nbsp;
