@@ -1,5 +1,6 @@
 # Roadmap
 
+- [ ] Implement the approved master website redevelopment: refreshed identity, copy, video showcase, page alignment, SEO review, and responsive validation.
 - [x] Local SEO structure on homepage (hidden H1, visible H2, keyword copy, alt text, LocalBusiness JSON-LD)
 - [x] New Mediterranean hero photograph (diverse group, white linen, golden hour)
 - [x] Offerings section: core services + Music Marketing & Artist PR
@@ -10,3 +11,4 @@
 - [ ] Selected work items become dedicated pages (/work/saver, /work/bellucci) instead of pop-ups
 - [ ] Bellucci images show fully on mobile
 - [ ] "Case study" wording → "View Work" / "Explore Our Work"
+- [ ] Web3Forms key remains a user-provided setup item; live delivery cannot be verified until configured.

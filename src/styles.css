@@ -5,9 +5,8 @@
 @custom-variant dark (&:is(.dark *));
 
 /*
- * TRU BLU design system
- * Santorini x luxury editorial x modern business.
- * Deep Mediterranean navy, cobalt, Aegean, limestone, warm white, chrome.
+ * TRU BLU boutique brand system.
+ * Cobalt leads, burnt orange accents, ivory and ink keep the identity restrained.
  */
 
 @theme inline {
@@ -48,50 +47,53 @@
   --color-sand: var(--sand);
   --color-chrome: var(--chrome);
   --color-ink: var(--ink);
+  --color-orange: var(--orange);
+  --color-ivory: var(--ivory);
+  --color-white: var(--white);
 
-  --font-display: "Archivo", "Helvetica Neue", sans-serif;
+  --font-display: "DM Sans", system-ui, sans-serif;
   --font-serif: "Instrument Serif", Georgia, serif;
   --font-sans: "DM Sans", system-ui, sans-serif;
-  --font-jakarta: "Plus Jakarta Sans", system-ui, sans-serif;
-  --font-inter: "Inter", system-ui, sans-serif;
-  --color-saver-navy: #0B1F3B;
-  --color-saver-blue: #0E4A6B;
-  --color-saver-green: #4EE38A;
-  --color-saver-mint: #DFFFE4;
-  --color-saver-gray: #F5F7FA;
+  --font-jakarta: "DM Sans", system-ui, sans-serif;
+  --font-inter: "DM Sans", system-ui, sans-serif;
 }
 
 :root {
   --radius: 0.125rem;
 
-  --navy-deep: oklch(0.19 0.062 265);
-  --navy: oklch(0.27 0.086 264);
-  --cobalt: oklch(0.45 0.208 264);
-  --aegean: oklch(0.6 0.115 232);
-  --limestone: oklch(0.958 0.008 85);
-  --sand: oklch(0.9 0.021 82);
+  --navy-deep: oklch(0.2 0.012 270);
+  --navy: oklch(0.28 0.03 267);
+  --cobalt: oklch(0.49 0.21 267);
+  --aegean: oklch(0.57 0.16 262);
+  --limestone: oklch(0.96 0.012 83);
+  --sand: oklch(0.92 0.018 82);
   --chrome: oklch(0.83 0.006 250);
-  --ink: oklch(0.22 0.02 264);
+  --ink: oklch(0.2 0.012 270);
+  --orange: oklch(0.68 0.15 45);
+  --ivory: oklch(0.96 0.012 83);
+  --white: oklch(1 0 0);
 
-  --background: oklch(0.975 0.005 85);
+  --background: var(--ivory);
   --foreground: var(--ink);
-  --card: oklch(1 0 0);
+  --card: var(--white);
   --card-foreground: var(--ink);
-  --popover: oklch(1 0 0);
+  --popover: var(--white);
   --popover-foreground: var(--ink);
   --primary: var(--cobalt);
   --primary-foreground: oklch(0.985 0.004 85);
-  --secondary: var(--sand);
-  --secondary-foreground: var(--navy-deep);
-  --muted: oklch(0.94 0.008 85);
-  --muted-foreground: oklch(0.5 0.02 264);
-  --accent: var(--aegean);
-  --accent-foreground: oklch(0.985 0.004 85);
+  --secondary: var(--white);
+  --secondary-foreground: var(--ink);
+  --muted: var(--sand);
+  --muted-foreground: oklch(0.48 0.015 270);
+  --accent: var(--orange);
+  --accent-foreground: var(--ink);
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.985 0.004 85);
   --border: oklch(0.885 0.012 84);
   --input: oklch(0.885 0.012 84);
   --ring: var(--cobalt);
+  --border: oklch(0.86 0.012 83);
+  --input: oklch(0.82 0.012 83);
 }
 
 @layer base {
@@ -114,10 +116,10 @@
 
 @utility display {
   font-family: var(--font-display);
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: -0.035em;
-  line-height: 0.88;
+  font-weight: 600;
+  text-transform: none;
+  letter-spacing: 0;
+  line-height: 0.98;
 }
 
 @utility eyebrow {
