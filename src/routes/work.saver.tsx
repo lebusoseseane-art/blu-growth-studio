@@ -6,19 +6,19 @@ const ICON = "/assets/saver-icon.jpg";
 const SCOPE = [
   {
     title: "Market Research & Consumer Insights",
-    body: "Deep localized retail research, South African consumer saving habits analysis, and behavioral target profiling to ensure Saver enters the market with the right message.",
+    body: "Retail and audience research to shape relevant South African launch messaging and identify the consumers Saver needs to reach.",
   },
   {
     title: "Integrated MarCom Strategy",
-    body: "Formulating comprehensive strategic marketing communication plans and multi-channel acquisition funnels for Saver's arrival.",
+    body: "A marketing communications plan connecting pre-launch activity, audience development and the wider go-to-market effort.",
   },
   {
     title: "Pre-Launch Hype & Awareness",
-    body: "Coming-soon teaser campaigns, social presence building and owned-channel content designed to build nationwide anticipation ahead of launch.",
+    body: "Pre-launch campaign messaging and social content to introduce Saver and build awareness ahead of its arrival.",
   },
   {
     title: "Full Go-To-Market Rollout",
-    body: "End-to-end management of the high-impact launch campaigns, experiential brand activations and performance advertising when Saver goes live.",
+    body: "Coordinated launch communications and advertising planning for when the platform is ready to go live.",
   },
 ];
 
@@ -43,19 +43,23 @@ export const Route = createFileRoute("/work/saver")({
           "Marketing the launch of Saver — South Africa's next retail fintech app, coming soon.",
       },
       { property: "og:type", content: "website" },
+      { property: "og:url", content: "https://blu-growth-studio.lovable.app/work/saver" },
+      { name: "twitter:title", content: "Saver App — Coming Soon | TRU BLU Digital Marketing" },
+      { name: "twitter:description", content: "Tru Blu is leading marketing for Saver, a South African retail fintech platform yet to launch." },
       { name: "twitter:card", content: "summary_large_image" },
     ],
+    links: [{ rel: "canonical", href: "https://blu-growth-studio.lovable.app/work/saver" }],
   }),
   component: SaverWork,
 });
 
 function SaverWork() {
   return (
-    <div className="bg-saver-navy text-saver-gray">
+    <div className="bg-background text-foreground">
       <div className="mx-auto max-w-[1300px] px-6 py-24 md:px-10">
         <Link
           to="/"
-          className="font-inter text-xs uppercase tracking-[0.2em] text-saver-gray/60 transition-colors hover:text-saver-green"
+          className="eyebrow text-muted-foreground transition-colors hover:text-primary"
         >
           ← Back to selected work
         </Link>
@@ -63,54 +67,51 @@ function SaverWork() {
           <img src={ICON} alt="Saver App icon" className="h-16 w-16 rounded-2xl" />
           <SaverBadge />
         </div>
-        <h2 className="mt-8 font-jakarta text-4xl font-extrabold leading-[1.02] tracking-tight md:text-6xl">
-          Saver App — Building South Africa’s Next Retail Fintech Disruptor
-        </h2>
-        <p className="mt-6 font-jakarta text-2xl font-bold tracking-[0.25em] text-saver-green md:text-3xl">SAVE • GROW • LIVE</p>
-        <p className="mt-8 max-w-3xl font-inter text-lg leading-relaxed text-saver-gray/75">
+        <h1 className="display mt-8 max-w-4xl text-4xl leading-tight md:text-6xl">
+          Saver App — Marketing for a platform coming soon
+        </h1>
+        <p className="mt-6 text-xl font-semibold text-primary md:text-2xl">SAVE • GROW • LIVE</p>
+        <p className="mt-8 max-w-3xl text-lg leading-relaxed text-muted-foreground">
           Saver is coming soon — the platform is yet to launch. Tru Blu is the marketing agency
           behind its market introduction: the research, the marketing communication strategy and
           the nationwide go-to-market rollout that will carry Saver from pre-launch hype to a
           full launch campaign.
         </p>
 
-        <p className="mt-20 font-inter text-xs uppercase tracking-[0.25em] text-saver-green">Executive Summary // Tru Blu’s Marketing Scope</p>
+        <p className="eyebrow mt-20 text-primary">Tru Blu’s marketing scope</p>
         <div className="mt-6 grid gap-4 md:grid-cols-2">
           {SCOPE.map((s, i) => (
-            <div key={s.title} className="rounded-2xl border border-saver-gray/10 bg-saver-blue/30 p-8 transition-colors duration-300 hover:border-saver-green/50">
-              <p className="font-inter text-sm text-saver-green">0{i + 1}</p>
-              <h3 className="mt-3 font-jakarta text-2xl font-bold">{s.title}</h3>
-              <p className="mt-4 font-inter leading-relaxed text-saver-gray/75">{s.body}</p>
-              <div className="mt-6 h-1 overflow-hidden rounded-full bg-saver-gray/10">
-                <div className="h-full rounded-full bg-saver-green" style={{ width: `${100 - i * 20}%` }} />
-              </div>
+            <div key={s.title} className="border-t border-border py-7 md:px-4">
+              <p className="eyebrow text-primary">0{i + 1}</p>
+              <h2 className="display mt-3 text-2xl md:text-3xl">{s.title}</h2>
+              <p className="mt-4 leading-relaxed text-muted-foreground">{s.body}</p>
             </div>
           ))}
         </div>
 
-        <p className="mt-24 font-inter text-xs uppercase tracking-[0.25em] text-saver-green">Visual Asset Vault</p>
+        <p className="eyebrow mt-24 text-primary">Marketing assets</p>
         <div className="mt-6 grid gap-4 md:grid-cols-2">
           {VAULT.map((v) => (
-            <figure key={v.title} className="group overflow-hidden rounded-2xl border border-saver-gray/10 bg-saver-blue/20">
+            <figure key={v.title} className="group overflow-hidden border border-border bg-card">
               <div className="aspect-[4/5] overflow-hidden">
                 <img src={v.src} alt={`Saver App ${v.title} — marketing assets by Tru Blu`} loading="lazy" className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" />
               </div>
               <figcaption className="p-6">
-                <h4 className="font-jakarta text-lg font-bold">{v.title}</h4>
-                <p className="mt-2 font-inter text-sm leading-relaxed text-saver-gray/70">{v.body}</p>
+                <h3 className="display text-xl">{v.title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{v.body}</p>
               </figcaption>
             </figure>
           ))}
         </div>
 
-        <div className="mt-24 rounded-3xl bg-gradient-to-br from-saver-blue to-saver-navy p-10 text-center md:p-16">
-          <p className="mx-auto max-w-3xl font-jakarta text-3xl font-extrabold tracking-tight md:text-4xl">Ready to Build Your Next Big Disruptor?</p>
-          <p className="mx-auto mt-5 max-w-2xl font-inter text-saver-gray/75">
-            Partner with Tru Blu for comprehensive agency backing—from market research to nationwide market dominance.
+        <div className="mt-24 border-t border-border py-14 text-center md:py-20">
+          <p className="display mx-auto max-w-3xl text-3xl md:text-4xl">Marketing Saver’s next chapter.</p>
+          <p className="mx-auto mt-5 max-w-2xl text-muted-foreground">
+            Saver has not launched yet. Tru Blu’s role is its marketing and go-to-market preparation.
           </p>
           <Link
             to="/contact"
-            className="mt-10 inline-block rounded-full bg-saver-green px-10 py-5 font-inter text-[0.7rem] font-medium uppercase tracking-[0.2em] text-saver-navy transition-opacity hover:opacity-85"
+            className="mt-10 inline-flex items-center justify-center bg-foreground px-10 py-5 text-[0.7rem] uppercase tracking-[0.2em] text-background transition-colors hover:bg-primary"
           >
             Partner with Tru Blu
           </Link>

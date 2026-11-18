@@ -30,6 +30,8 @@ export const Route = createFileRoute("/contact")({
       },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "https://blu-growth-studio.lovable.app/contact" },
+      { name: "twitter:title", content: "Contact a Digital Marketing Agency in Johannesburg | TRU BLU" },
+      { name: "twitter:description", content: "Tell TRU BLU where your business is going. Discuss social media, advertising, branding, SEO or music marketing." },
       { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [{ rel: "canonical", href: "https://blu-growth-studio.lovable.app/contact" }],
@@ -253,6 +255,14 @@ function ContactPage() {
                       className="mt-3 w-full border-b border-border bg-transparent pb-3 text-lg outline-none transition-colors focus:border-primary"
                     />
                   </div>
+
+                  <p className="text-sm leading-relaxed text-muted-foreground">
+                    Your details are sent to TRU BLU through Web3Forms so we can respond
+                    to your enquiry. For privacy questions, email{" "}
+                    <a className="underline underline-offset-4" href="mailto:goblu@trubluagency.co.za">
+                      goblu@trubluagency.co.za
+                    </a>.
+                  </p>
 
                   {error ? (
                     <p className="text-sm text-destructive" role="alert">

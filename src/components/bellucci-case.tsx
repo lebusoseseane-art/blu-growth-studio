@@ -1,12 +1,11 @@
-import { useNavigate } from "@tanstack/react-router";
+import { Link } from "@tanstack/react-router";
 
 const COVER = "/assets/bellucci-bottle.jpg?v=2";
 
 export function BellucciCase() {
-  const navigate = useNavigate();
-
   return (
-    <article className="group relative cursor-pointer overflow-hidden bg-navy-deep text-limestone" onClick={() => navigate({ to: "/work/bellucci" })}>
+    <Link to="/work/bellucci" className="group block overflow-hidden bg-navy-deep text-limestone focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary">
+      <article>
       <div className="grid lg:grid-cols-2">
         <figure className="relative overflow-hidden">
           <img
@@ -38,14 +37,12 @@ export function BellucciCase() {
           <p className="mt-6 max-w-md font-serif text-lg italic text-limestone/75">
             Strategically placed at the Banquet Luxury Sunset Event Experience — experiential venue branding, product placement, and luxury market positioning at Maracanà Sandton, Johannesburg.
           </p>
-          <button
-            type="button"
-            className="mt-10 border border-limestone/50 px-8 py-4 text-[0.7rem] uppercase tracking-[0.24em] transition-colors duration-300 hover:bg-limestone hover:text-navy-deep"
-          >
+          <span className="mt-10 inline-flex border border-limestone/50 px-8 py-4 text-[0.7rem] uppercase tracking-[0.24em] transition-colors duration-300 group-hover:bg-limestone group-hover:text-navy-deep">
             View Work
-          </button>
+          </span>
         </div>
       </div>
-    </article>
+      </article>
+    </Link>
   );
 }

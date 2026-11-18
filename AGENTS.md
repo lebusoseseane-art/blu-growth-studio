@@ -10,3 +10,4 @@
 <!-- LOVABLE:END -->
 
 - Keep the homepage video showcase in a focused data-driven component with five named, initially empty sources and deferred native playback so visitors do not download clips before choosing one.
+- Keep a static XML sitemap aligned with canonical public content pages so search crawlers can discover the established URLs without runtime data.

@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteHeader, SiteFooter } from "@/components/site-chrome";
 import { BellucciCase } from "@/components/bellucci-case";
 import { SaverCase } from "@/components/saver-case";
+import { MiniPlayerShowcase } from "@/components/mini-player-showcase";
 const heroSantorini = "/assets/hero-santorini.jpg?v=mediterranean-woman";
 const stillFruit = "/assets/still-fruit.jpg";
 const deviceAds = "/assets/device-ads.jpg";
@@ -31,6 +32,8 @@ export const Route = createFileRoute("/")({
       },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "https://blu-growth-studio.lovable.app/" },
+      { name: "twitter:title", content: "Digital Marketing Johannesburg | TRU BLU Digital Marketing Agency" },
+      { name: "twitter:description", content: "Strategic social media management and creative growth agency in Gauteng. Brand strategy, paid social, local SEO and music marketing." },
       { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [{ rel: "canonical", href: "https://blu-growth-studio.lovable.app/" }],
@@ -257,6 +260,36 @@ function Home() {
           </div>
         </section>
 
+        {/* PROFESSIONAL MARKETING */}
+        <section className="border-y border-border py-24 md:py-32">
+          <div className="mx-auto grid max-w-[1600px] gap-12 px-6 md:px-10 lg:grid-cols-[1fr_1fr] lg:gap-24">
+            <div>
+              <p className="eyebrow text-primary">A more considered approach</p>
+              <h2 className="display mt-6 max-w-2xl text-[12vw] leading-[0.88] sm:text-6xl lg:text-7xl">
+                Ditch the AI marketing.
+              </h2>
+            </div>
+            <div className="space-y-6 self-end text-base leading-relaxed text-muted-foreground md:text-lg">
+              <p>
+                Customers notice when a brand feels generic. Automated templates can
+                help with production, but they cannot replace a clear position, original
+                creative direction or an understanding of the people you want to reach.
+              </p>
+              <p>
+                We use technology to support research, planning and analysis. Strategy,
+                creative choices and campaign decisions stay grounded in the business,
+                its audience and its objectives.
+              </p>
+              <Link
+                to="/contact"
+                className="inline-flex items-center justify-center border border-foreground px-7 py-4 text-[0.7rem] uppercase tracking-[0.2em] text-foreground transition-colors hover:bg-foreground hover:text-background"
+              >
+                Discuss your marketing
+              </Link>
+            </div>
+          </div>
+        </section>
+
         {/* SERVICES */}
         <section id="services" className="scroll-mt-24 py-28 md:py-40">
           <div className="mx-auto max-w-[1600px] px-6 md:px-10">
@@ -373,8 +406,10 @@ function Home() {
                 </span>
               ))}
             </div>
-            <p className="mt-12 max-w-lg text-base leading-relaxed text-muted-foreground">
-              Every engagement moves left to right. Nothing is built in isolation.
+            <p className="mt-12 max-w-2xl text-base leading-relaxed text-muted-foreground">
+              We connect brand and audience insight to campaign planning, creative,
+              measurement and optimisation. Advertising starts with a defined objective
+              and a considered audience—not simply a boosted post.
             </p>
           </div>
         </section>
@@ -432,6 +467,7 @@ function Home() {
                 </article>
               ))}
             </div>
+            <MiniPlayerShowcase />
           </div>
         </section>
 
@@ -483,7 +519,7 @@ function Home() {
             <div className="grid gap-14 lg:grid-cols-[1fr_1.1fr] lg:gap-24">
               <img
                 src={aboutTerrace}
-                alt="Digital marketing agency Sandton dashboard on a laptop on a linen table overlooking the Aegean"
+                alt="TRU BLU digital marketing team planning brand strategy for South African businesses at a sunlit terrace"
                 loading="lazy"
                 width={1408}
                 height={1104}

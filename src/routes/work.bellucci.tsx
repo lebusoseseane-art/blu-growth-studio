@@ -47,8 +47,12 @@ export const Route = createFileRoute("/work/bellucci")({
           "Experiential venue branding, product placement and luxury market positioning at Maracanà Sandton, Johannesburg.",
       },
       { property: "og:type", content: "website" },
+      { property: "og:url", content: "https://blu-growth-studio.lovable.app/work/bellucci" },
+      { name: "twitter:title", content: "Bellucci Luxury Vodka — PR Activation | TRU BLU Digital Marketing" },
+      { name: "twitter:description", content: "Experiential venue branding, product placement and luxury market positioning at Maracana, Sandton." },
       { name: "twitter:card", content: "summary_large_image" },
     ],
+    links: [{ rel: "canonical", href: "https://blu-growth-studio.lovable.app/work/bellucci" }],
   }),
   component: BellucciWork,
 });
@@ -91,9 +95,9 @@ function BellucciWork() {
           ← Back to selected work
         </Link>
         <p className="eyebrow mt-10 text-aegean">Featured work</p>
-        <h2 className="display mt-6 text-4xl leading-[0.9] md:text-6xl">
+        <h1 className="display mt-6 text-4xl leading-[0.9] md:text-6xl">
           Elevating Bellucci Luxury Vodka in Sandton’s Premier Nightlife Scene
-        </h2>
+        </h1>
         <p className="mt-8 max-w-3xl font-serif text-xl italic text-limestone/75">
           How Tru Blu strategically placed Bellucci at the Banquet Luxury Sunset Event Experience at Maracanà Sandton — executing high-impact venue branding, product placement, and experiential activation to position the brand directly in front of South Africa's high-net-worth clientele.
         </p>
@@ -125,7 +129,7 @@ function BellucciWork() {
               onClick={() => setLightbox(i)}
               className={`group relative overflow-hidden bg-navy/60 text-left aspect-[3/4] md:aspect-auto ${g.span}`}
             >
-              <img src={g.src} alt={`${g.caption} — Bellucci Vodka activation Sandton`} loading="lazy" className="h-full w-full object-contain transition-transform duration-700 group-hover:scale-105 md:object-cover" />
+              <img src={g.src} alt={`${g.caption} — Bellucci Vodka activation Sandton`} loading="lazy" className="block h-auto w-full object-contain transition-transform duration-700 group-hover:scale-105 md:h-full md:min-h-[260px] md:object-cover" />
               <span className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-navy-deep/90 to-transparent p-4 text-sm">{g.caption}</span>
             </button>
           ))}

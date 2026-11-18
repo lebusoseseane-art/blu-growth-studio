@@ -39,9 +39,9 @@ export function MiniPlayerShowcase() {
             Work made to move.
           </h3>
         </div>
-        <p className="max-w-sm text-sm leading-relaxed text-muted-foreground">
-          Five dedicated spaces for short-form work, ready for the original clips.
-        </p>
+          <p className="max-w-sm text-sm leading-relaxed text-muted-foreground">
+            Five dedicated spaces for short-form work, ready for the original clips.
+          </p>
       </div>
 
       <div className="relative mt-12 grid grid-cols-2 gap-3 sm:gap-5 lg:mx-auto lg:mt-16 lg:block lg:h-[760px] lg:max-w-[1120px]">
@@ -58,15 +58,7 @@ export function MiniPlayerShowcase() {
                 aria-label={`Play ${player.id}`}
                 className="group h-full w-full flex-col justify-between rounded-none p-0 text-background hover:bg-foreground"
               >
-                <video
-                  className="h-full w-full object-cover"
-                  src={player.source}
-                  poster={undefined}
-                  preload="none"
-                  muted
-                  playsInline
-                  aria-hidden="true"
-                />
+                <span aria-hidden="true" className="absolute inset-0 bg-foreground" />
                 <span className="absolute inset-0 flex items-center justify-center bg-foreground/10 transition-colors group-hover:bg-foreground/30">
                   <span className="grid size-12 place-items-center border border-background/70 bg-foreground/50">
                     <Play aria-hidden="true" className="size-5 fill-current" />
@@ -110,7 +102,14 @@ export function MiniPlayerShowcase() {
                 <X aria-hidden="true" />
               </Button>
             </div>
-            <video className="max-h-[75vh] w-full bg-foreground" src={activePlayer.source} controls preload="metadata" playsInline />
+            <video
+              className="max-h-[75vh] w-full bg-foreground"
+              src={activePlayer.source}
+              controls
+              preload="metadata"
+              playsInline
+              aria-label={`${activePlayer.id} video`}
+            />
           </div>
         ) : null}
       </dialog>
