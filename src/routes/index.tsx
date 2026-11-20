@@ -2,7 +2,6 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteHeader, SiteFooter } from "@/components/site-chrome";
 import { BellucciCase } from "@/components/bellucci-case";
 import { SaverCase } from "@/components/saver-case";
-import { MiniPlayerShowcase } from "@/components/mini-player-showcase";
 const heroSantorini = "/assets/hero-santorini.jpg?v=mediterranean-woman";
 const stillFruit = "/assets/still-fruit.jpg";
 const deviceAds = "/assets/device-ads.jpg";
@@ -467,7 +466,6 @@ function Home() {
                 </article>
               ))}
             </div>
-            <MiniPlayerShowcase />
           </div>
         </section>
 

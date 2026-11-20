@@ -51,11 +51,11 @@
   --color-ivory: var(--ivory);
   --color-white: var(--white);
 
-  --font-display: "DM Sans", system-ui, sans-serif;
+  --font-display: "Archivo", system-ui, sans-serif;
   --font-serif: "Instrument Serif", Georgia, serif;
-  --font-sans: "DM Sans", system-ui, sans-serif;
-  --font-jakarta: "DM Sans", system-ui, sans-serif;
-  --font-inter: "DM Sans", system-ui, sans-serif;
+  --font-sans: "Archivo", system-ui, sans-serif;
+  --font-jakarta: "Archivo", system-ui, sans-serif;
+  --font-inter: "Archivo", system-ui, sans-serif;
 }
 
 :root {
@@ -105,6 +105,7 @@
     background-color: var(--color-background);
     color: var(--color-foreground);
     font-family: var(--font-sans);
+    font-weight: 500;
     -webkit-font-smoothing: antialiased;
   }
 
@@ -116,7 +117,7 @@
 
 @utility display {
   font-family: var(--font-display);
-  font-weight: 600;
+  font-weight: 700;
   text-transform: none;
   letter-spacing: 0;
   line-height: 0.98;
@@ -125,7 +126,7 @@
 @utility eyebrow {
   font-family: var(--font-sans);
   font-size: 0.6875rem;
-  font-weight: 500;
+  font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.28em;
 }
