@@ -6,4 +6,4 @@
 - [x] Offerings section: core services + Music Marketing & Artist PR
 - [x] Web3Forms lead form routed to goblu@trubluagency.co.za with thank-you auto-response
 - [x] Static sitemap added
-- [ ] User to provide the Web3Forms access key; live enquiry delivery cannot be verified until configured.
+- [ ] Finish contact privacy update: server-side Web3Forms proxy, revised caption, footer-only Privacy Policy page, and sitemap entry; delivery remains dependent on Web3Forms paid-plan/IP-whitelist settings.

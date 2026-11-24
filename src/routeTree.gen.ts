@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as ContactRouteImport } from './routes/contact'
+import { Route as PrivacyPolicyRouteImport } from './routes/privacy-policy'
 import { Route as WorkRouteImport } from './routes/work'
 import { Route as WorkBellucciRouteImport } from './routes/work.bellucci'
 import { Route as WorkSaverRouteImport } from './routes/work.saver'
@@ -23,6 +24,11 @@ const IndexRoute = IndexRouteImport.update({
 const ContactRoute = ContactRouteImport.update({
   id: '/contact',
   path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PrivacyPolicyRoute = PrivacyPolicyRouteImport.update({
+  id: '/privacy-policy',
+  path: '/privacy-policy',
   getParentRoute: () => rootRouteImport,
 } as any)
 const WorkRoute = WorkRouteImport.update({
@@ -44,6 +50,7 @@ const WorkSaverRoute = WorkSaverRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/contact': typeof ContactRoute
+  '/privacy-policy': typeof PrivacyPolicyRoute
   '/work': typeof WorkRouteWithChildren
   '/work/bellucci': typeof WorkBellucciRoute
   '/work/saver': typeof WorkSaverRoute
@@ -51,6 +58,7 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/contact': typeof ContactRoute
+  '/privacy-policy': typeof PrivacyPolicyRoute
   '/work': typeof WorkRouteWithChildren
   '/work/bellucci': typeof WorkBellucciRoute
   '/work/saver': typeof WorkSaverRoute
@@ -59,21 +67,42 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/contact': typeof ContactRoute
+  '/privacy-policy': typeof PrivacyPolicyRoute
   '/work': typeof WorkRouteWithChildren
   '/work/bellucci': typeof WorkBellucciRoute
   '/work/saver': typeof WorkSaverRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/contact' | '/work' | '/work/bellucci' | '/work/saver'
+  fullPaths:
+    | '/'
+    | '/contact'
+    | '/privacy-policy'
+    | '/work'
+    | '/work/bellucci'
+    | '/work/saver'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/contact' | '/work' | '/work/bellucci' | '/work/saver'
-  id: '__root__' | '/' | '/contact' | '/work' | '/work/bellucci' | '/work/saver'
+  to:
+    | '/'
+    | '/contact'
+    | '/privacy-policy'
+    | '/work'
+    | '/work/bellucci'
+    | '/work/saver'
+  id:
+    | '__root__'
+    | '/'
+    | '/contact'
+    | '/privacy-policy'
+    | '/work'
+    | '/work/bellucci'
+    | '/work/saver'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   ContactRoute: typeof ContactRoute
+  PrivacyPolicyRoute: typeof PrivacyPolicyRoute
   WorkRoute: typeof WorkRouteWithChildren
 }
 
@@ -91,6 +120,13 @@ declare module '@tanstack/react-router' {
       path: '/contact'
       fullPath: '/contact'
       preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/privacy-policy': {
+      id: '/privacy-policy'
+      path: '/privacy-policy'
+      fullPath: '/privacy-policy'
+      preLoaderRoute: typeof PrivacyPolicyRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/work': {
@@ -132,6 +168,7 @@ const WorkRouteWithChildren = WorkRoute._addFileChildren(WorkRouteChildren)
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   ContactRoute: ContactRoute,
+  PrivacyPolicyRoute: PrivacyPolicyRoute,
   WorkRoute: WorkRouteWithChildren,
 }
 export const routeTree = rootRouteImport

@@ -1,13 +1,9 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { useServerFn } from "@tanstack/react-start";
 import { useState } from "react";
-import { z } from "zod";
 import { SiteHeader, SiteFooter } from "@/components/site-chrome";
-import {
-  AUTORESPONDER_BODY,
-  AUTORESPONDER_SUBJECT,
-  LEAD_RECIPIENT,
-  WEB3FORMS_ACCESS_KEY,
-} from "@/lib/forms";
+import { INTEREST_OPTIONS, leadSchema, SERVICE_OPTIONS } from "@/lib/forms";
+import { submitLead } from "@/lib/forms.functions";
 const poolTexture = "/assets/texture-pool.jpg";
 
 export const Route = createFileRoute("/contact")({
@@ -39,50 +35,12 @@ export const Route = createFileRoute("/contact")({
   component: ContactPage,
 });
 
-const SERVICE_OPTIONS = [
-  "Social media management",
-  "Digital advertising (Meta / TikTok)",
-  "Brand strategy",
-  "Content creation",
-  "Local SEO optimisation",
-  "Music video production",
-  "4K DJ mixes for TV & streaming",
-  "Music advertising & paid media",
-  "Album rollout & single launch",
-  "PR & activations",
-  "Growth strategy",
-];
-
-const INTERESTS = [
-  "Branding",
-  "Social media",
-  "Meta ads",
-  "TikTok ads",
-  "Reels / content",
-  "SEO & Google Ads",
-  "PR & activations",
-  "Growth strategy",
-];
-
-const leadSchema = z.object({
-  name: z.string().trim().min(2, "Please enter your name").max(100),
-  business: z.string().trim().max(120).optional(),
-  email: z.string().trim().email("Please enter a valid email address").max(255),
-  phone: z
-    .string()
-    .trim()
-    .min(7, "Please enter a valid phone number")
-    .max(25)
-    .regex(/^[0-9+()\-\s]+$/, "Please enter a valid phone number"),
-  service: z.string().trim().min(1, "Please choose a service"),
-  message: z.string().trim().max(2000).optional(),
-});
-
 function ContactPage() {
   const [sent, setSent] = useState(false);
   const [sending, setSending] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [selected, setSelected] = useState<string[]>([]);
+  const submitLeadFn = useServerFn(submitLead);
 
   const toggle = (item: string) =>
     setSelected((prev) =>
@@ -106,33 +64,8 @@ function ContactPage() {
     setSending(true);
 
     try {
-      const response = await fetch("https://api.web3forms.com/submit", {
-        method: "POST",
-        headers: { "Content-Type": "application/json", Accept: "application/json" },
-        body: JSON.stringify({
-          access_key: WEB3FORMS_ACCESS_KEY,
-          subject: `New enquiry from ${lead.name} — ${lead.service}`,
-          from_name: "TRU BLU Website",
-          to: LEAD_RECIPIENT,
-          replyto: lead.email,
-          name: lead.name,
-          email: lead.email,
-          phone: lead.phone,
-          business: lead.business ?? "",
-          service_needed: lead.service,
-          also_interested_in: selected.join(", "),
-          message: lead.message ?? "",
-          // Instant thank-you email sent back to the client by Web3Forms
-          autoresponder_subject: AUTORESPONDER_SUBJECT,
-          autoresponder_message: AUTORESPONDER_BODY,
-        }),
-      });
-
-      const result = (await response.json()) as { success?: boolean; message?: string };
-
-      if (!response.ok || !result.success) {
-        throw new Error(result.message ?? "Submission failed");
-      }
+      const result = await submitLeadFn({ data: lead });
+      if (!result.success) throw new Error("Submission failed");
 
       setSent(true);
       form.reset();
@@ -196,6 +129,16 @@ function ContactPage() {
                 </div>
               ) : (
                 <form className="space-y-8" onSubmit={handleSubmit} noValidate>
+                  <div aria-hidden="true" className="hidden">
+                    <label htmlFor="website">Website</label>
+                    <input
+                      id="website"
+                      name="website"
+                      type="text"
+                      tabIndex={-1}
+                      autoComplete="off"
+                    />
+                  </div>
                   <Field label="Name" name="name" autoComplete="name" />
                   <Field label="Business" name="business" required={false} />
                   <Field label="Email" name="email" type="email" autoComplete="email" />
@@ -226,7 +169,7 @@ function ContactPage() {
                   <div>
                     <p className="eyebrow text-muted-foreground">Also interested in</p>
                     <div className="mt-4 flex flex-wrap gap-2">
-                      {INTERESTS.map((item) => (
+                      {INTEREST_OPTIONS.map((item) => (
                         <button
                           key={item}
                           type="button"
@@ -257,8 +200,8 @@ function ContactPage() {
                   </div>
 
                   <p className="text-sm leading-relaxed text-muted-foreground">
-                    Your details are sent to TRU BLU through Web3Forms so we can respond
-                    to your enquiry. For privacy questions, email{" "}
+                    For specified marketing concepts, tailored quotation requests, or direct enquiries,
+                    contact us at{" "}
                     <a className="underline underline-offset-4" href="mailto:goblu@trubluagency.co.za">
                       goblu@trubluagency.co.za
                     </a>.

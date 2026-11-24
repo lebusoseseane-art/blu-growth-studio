@@ -142,6 +142,9 @@ export function SiteFooter() {
             <a href="tel:+27768659792" className="block hover:text-limestone">
               076 865 9792
             </a>
+            <Link to="/privacy-policy" className="block hover:text-limestone">
+              Privacy Policy
+            </Link>
             <p>Gauteng, RSA</p>
           </div>
         </div>

@@ -1,16 +1,71 @@
-/**
- * Web3Forms access key for the TRU BLU lead form.
- *
- * Get a key at https://web3forms.com by entering goblu@trubluagency.co.za —
- * the key is emailed instantly and every submission is delivered to that
- * address over HTTPS. Paste it below (the key is public by design and safe
- * to keep in the front-end code).
- */
-export const WEB3FORMS_ACCESS_KEY = "REPLACE_WITH_YOUR_WEB3FORMS_ACCESS_KEY";
+import { z } from "zod";
 
-export const LEAD_RECIPIENT = "goblu@trubluagency.co.za";
+export const SERVICE_OPTIONS = [
+  "Social media management",
+  "Digital advertising (Meta / TikTok)",
+  "Brand strategy",
+  "Content creation",
+  "Local SEO optimisation",
+  "Music video production",
+  "4K DJ mixes for TV & streaming",
+  "Music advertising & paid media",
+  "Album rollout & single launch",
+  "PR & activations",
+  "Growth strategy",
+] as const;
 
-export const AUTORESPONDER_SUBJECT = "Thank you for contacting Tru Blu Digital Marketing";
+export const INTEREST_OPTIONS = [
+  "Branding",
+  "Social media",
+  "Meta ads",
+  "TikTok ads",
+  "Reels / content",
+  "SEO & Google Ads",
+  "PR & activations",
+  "Growth strategy",
+] as const;
 
-export const AUTORESPONDER_BODY =
-  "Thank you for reaching out to Tru Blu Digital Marketing. Your response has been successfully logged, and a representative from our agency will be in touch with you shortly.";
+const hasNoControlCharacters = (value: string) => !/[\u0000-\u001F\u007F]/.test(value);
+
+export const leadSchema = z
+  .object({
+    name: z
+      .string()
+      .trim()
+      .min(2, "Please enter your name")
+      .max(100)
+      .refine(hasNoControlCharacters, "Please enter a valid name"),
+    business: z
+      .string()
+      .trim()
+      .max(120)
+      .refine(hasNoControlCharacters, "Please enter a valid business name")
+      .optional()
+      .transform((value) => value || undefined),
+    email: z
+      .string()
+      .trim()
+      .email("Please enter a valid email address")
+      .max(255)
+      .refine(hasNoControlCharacters, "Please enter a valid email address"),
+    phone: z
+      .string()
+      .trim()
+      .min(7, "Please enter a valid phone number")
+      .max(25)
+      .regex(/^[0-9+()\-\s]+$/, "Please enter a valid phone number"),
+    service: z.enum(SERVICE_OPTIONS),
+    interests: z
+      .array(z.enum(INTEREST_OPTIONS))
+      .max(INTEREST_OPTIONS.length)
+      .refine((values) => new Set(values).size === values.length),
+    message: z
+      .string()
+      .trim()
+      .max(2000)
+      .refine(hasNoControlCharacters, "Please remove unsupported characters")
+      .optional()
+      .transform((value) => value || undefined),
+    website: z.string().trim().max(120).optional(),
+  })
+  .strict();
