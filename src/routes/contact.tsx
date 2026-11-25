@@ -39,8 +39,18 @@ function ContactPage() {
   const [sent, setSent] = useState(false);
   const [sending, setSending] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [fieldErrors, setFieldErrors] = useState<Partial<Record<LeadField, string>>>({});
   const [selected, setSelected] = useState<string[]>([]);
   const submitLeadFn = useServerFn(submitLead);
+
+  const clearFieldError = (field: LeadField) => {
+    setFieldErrors((previous) => {
+      if (!previous[field]) return previous;
+      const next = { ...previous };
+      delete next[field];
+      return next;
+    });
+  };
 
   const toggle = (item: string) =>
     setSelected((prev) =>
@@ -50,13 +60,32 @@ function ContactPage() {
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     setError(null);
+    setFieldErrors({});
 
     const form = event.currentTarget;
-    const raw = Object.fromEntries(new FormData(form).entries());
+    const raw = {
+      ...Object.fromEntries(new FormData(form).entries()),
+      interests: selected,
+    };
     const parsed = leadSchema.safeParse(raw);
 
     if (!parsed.success) {
-      setError(parsed.error.issues[0]?.message ?? "Please check the form and try again.");
+      const nextFieldErrors: Partial<Record<LeadField, string>> = {};
+      for (const issue of parsed.error.issues) {
+        const field = issue.path[0];
+        if (
+          field === "name" ||
+          field === "business" ||
+          field === "email" ||
+          field === "phone" ||
+          field === "service" ||
+          field === "message"
+        ) {
+          nextFieldErrors[field] =
+            field === "service" ? "Please select a service" : issue.message;
+        }
+      }
+      setFieldErrors(nextFieldErrors);
       return;
     }
 
@@ -139,10 +168,10 @@ function ContactPage() {
                       autoComplete="off"
                     />
                   </div>
-                  <Field label="Name" name="name" autoComplete="name" />
-                  <Field label="Business" name="business" required={false} />
-                  <Field label="Email" name="email" type="email" autoComplete="email" />
-                  <Field label="Phone number" name="phone" type="tel" autoComplete="tel" />
+                  <Field label="Name" name="name" autoComplete="name" error={fieldErrors.name} onChange={() => clearFieldError("name")} />
+                  <Field label="Business" name="business" required={false} error={fieldErrors.business} onChange={() => clearFieldError("business")} />
+                  <Field label="Email" name="email" type="email" autoComplete="email" error={fieldErrors.email} onChange={() => clearFieldError("email")} />
+                  <Field label="Phone number" name="phone" type="tel" autoComplete="tel" error={fieldErrors.phone} onChange={() => clearFieldError("phone")} />
 
                   <div>
                     <label htmlFor="service" className="eyebrow block text-muted-foreground">
@@ -153,7 +182,10 @@ function ContactPage() {
                       name="service"
                       required
                       defaultValue=""
-                      className="mt-3 w-full border-b border-border bg-transparent pb-3 text-lg outline-none transition-colors focus:border-primary"
+                      aria-invalid={Boolean(fieldErrors.service)}
+                      aria-describedby={fieldErrors.service ? "service-error" : undefined}
+                      onChange={() => clearFieldError("service")}
+                      className={`mt-3 w-full border-b bg-transparent pb-3 text-lg outline-none transition-colors focus:border-primary ${fieldErrors.service ? "border-destructive" : "border-border"}`}
                     >
                       <option value="" disabled>
                         Select a service
@@ -164,6 +196,11 @@ function ContactPage() {
                         </option>
                       ))}
                     </select>
+                    {fieldErrors.service ? (
+                      <p id="service-error" className="mt-2 text-sm text-destructive" role="alert">
+                        {fieldErrors.service}
+                      </p>
+                    ) : null}
                   </div>
 
                   <div>
@@ -195,8 +232,16 @@ function ContactPage() {
                       name="message"
                       rows={4}
                       maxLength={2000}
-                      className="mt-3 w-full border-b border-border bg-transparent pb-3 text-lg outline-none transition-colors focus:border-primary"
+                      aria-invalid={Boolean(fieldErrors.message)}
+                      aria-describedby={fieldErrors.message ? "message-error" : undefined}
+                      onChange={() => clearFieldError("message")}
+                      className={`mt-3 w-full border-b bg-transparent pb-3 text-lg outline-none transition-colors focus:border-primary ${fieldErrors.message ? "border-destructive" : "border-border"}`}
                     />
+                    {fieldErrors.message ? (
+                      <p id="message-error" className="mt-2 text-sm text-destructive" role="alert">
+                        {fieldErrors.message}
+                      </p>
+                    ) : null}
                   </div>
 
                   <p className="text-sm leading-relaxed text-muted-foreground">
@@ -232,18 +277,24 @@ function ContactPage() {
   );
 }
 
+type LeadField = "name" | "business" | "email" | "phone" | "service" | "message";
+
 function Field({
   label,
   name,
   type = "text",
   required = true,
   autoComplete,
+  error,
+  onChange,
 }: {
   label: string;
   name: string;
   type?: string;
   required?: boolean;
   autoComplete?: string;
+  error?: string | undefined;
+  onChange?: () => void;
 }) {
   return (
     <div>
@@ -257,8 +308,16 @@ function Field({
         required={required}
         autoComplete={autoComplete}
         maxLength={255}
-        className="mt-3 w-full border-b border-border bg-transparent pb-3 text-lg outline-none transition-colors focus:border-primary"
+        aria-invalid={Boolean(error)}
+        aria-describedby={error ? `${name}-error` : undefined}
+        onChange={onChange}
+        className={`mt-3 w-full border-b bg-transparent pb-3 text-lg outline-none transition-colors focus:border-primary ${error ? "border-destructive" : "border-border"}`}
       />
+      {error ? (
+        <p id={`${name}-error`} className="mt-2 text-sm text-destructive" role="alert">
+          {error}
+        </p>
+      ) : null}
     </div>
   );
 }

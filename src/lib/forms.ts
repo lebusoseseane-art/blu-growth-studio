@@ -58,7 +58,8 @@ export const leadSchema = z
     interests: z
       .array(z.enum(INTEREST_OPTIONS))
       .max(INTEREST_OPTIONS.length)
-      .refine((values) => new Set(values).size === values.length),
+      .refine((values) => new Set(values).size === values.length)
+      .default([]),
     message: z
       .string()
       .trim()
