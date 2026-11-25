@@ -67,6 +67,6 @@ export const leadSchema = z
       .refine(hasNoControlCharacters, "Please remove unsupported characters")
       .optional()
       .transform((value) => value || undefined),
-    website: z.string().trim().max(120).optional(),
+    botcheck: z.string().trim().max(120).optional(),
   })
   .strict();

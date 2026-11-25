@@ -1,10 +1,10 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useServerFn } from "@tanstack/react-start";
 import { useState } from "react";
 import { SiteHeader, SiteFooter } from "@/components/site-chrome";
 import { INTEREST_OPTIONS, leadSchema, SERVICE_OPTIONS } from "@/lib/forms";
-import { submitLead } from "@/lib/forms.functions";
 const poolTexture = "/assets/texture-pool.jpg";
+const WEB3FORMS_ACCESS_KEY = "783d852a-3754-42f5-84b0-407be8c51633";
+const LEAD_RECIPIENT = "goblu@trubluagency.co.za";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
@@ -41,7 +41,6 @@ function ContactPage() {
   const [error, setError] = useState<string | null>(null);
   const [fieldErrors, setFieldErrors] = useState<Partial<Record<LeadField, string>>>({});
   const [selected, setSelected] = useState<string[]>([]);
-  const submitLeadFn = useServerFn(submitLead);
 
   const clearFieldError = (field: LeadField) => {
     setFieldErrors((previous) => {
@@ -93,12 +92,43 @@ function ContactPage() {
     setSending(true);
 
     try {
-      const result = await submitLeadFn({ data: lead });
-      if (!result.success) throw new Error("Submission failed");
+      if (lead.botcheck) {
+        form.reset();
+        setSelected([]);
+        setSent(true);
+        return;
+      }
 
-      setSent(true);
+      const interests = lead.interests.join(", ");
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          access_key: WEB3FORMS_ACCESS_KEY,
+          subject: "New Tru Blu Agency Enquiry",
+          from_name: "TRU BLU Website",
+          to: LEAD_RECIPIENT,
+          name: lead.name,
+          email: lead.email,
+          phone: lead.phone,
+          business: lead.business ?? "",
+          service: lead.service,
+          service_needed: lead.service,
+          interests,
+          also_interested_in: interests,
+          message: lead.message ?? "",
+          botcheck: "",
+        }),
+      });
+      const result = (await response.json()) as { success?: boolean };
+      if (!response.ok || result.success !== true) throw new Error("Submission failed");
+
       form.reset();
       setSelected([]);
+      setSent(true);
     } catch {
       setError(
         "Something went wrong sending your enquiry. Please email goblu@trubluagency.co.za directly.",
@@ -159,11 +189,11 @@ function ContactPage() {
               ) : (
                 <form className="space-y-8" onSubmit={handleSubmit} noValidate>
                   <div aria-hidden="true" className="hidden">
-                    <label htmlFor="website">Website</label>
+                    <label htmlFor="botcheck">Leave this field empty</label>
                     <input
-                      id="website"
-                      name="website"
-                      type="text"
+                      id="botcheck"
+                      name="botcheck"
+                      type="checkbox"
                       tabIndex={-1}
                       autoComplete="off"
                     />
